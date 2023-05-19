@@ -10,7 +10,7 @@
 @font-face { font-style: normal; font-weight: 400; font-display: swap; font-family: 'Noto Sans TC';
     src: url(https://fonts.gstatic.com/s/notosanstc/v26/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.0.woff2) format("woff2"); }
 @font-face { font-style: normal; font-weight: 700; font-display: swap; font-family: 'Noto Sans TC';
-    src: url(https://fonts.gstatic.com/s/notosanstc/v26/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.6.woff2) format("woff2"); }
+    src: url(https://fonts.gstatic.com/s/notosanstc/v26/-nFkOG829Oofr2wohFbTp9i9gwQvDt1T39Cx8GLqqFgF1gfCybqlyVAxgTa5Jtz_zCzHs2CN4HYM28s.0.woff2) format("woff2"); }
 @font-face { font-style: normal; font-weight: 400; font-display: swap; font-family: 'Roboto';
     src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format("woff2"); }
 @font-face { font-style: normal; font-weight: 700; font-display: swap; font-family: 'Roboto';
@@ -37,6 +37,19 @@
 @cBg:    #F2F1F6;
 @cRed:   #EB5757;
 @cGreen: #27AE60;
+
+@cP1:    #B43512;
+@cP1s:   #F5B7A6;
+@cP2:    #BF9000;
+@cP2s:   #FEE599;
+@cP3:    #538135;
+@cP3s:   #C5E0B3;
+@cP4:    #2E75B5;
+@cP4s:   #BDD7EE;
+@cP5:    #C55A11;
+@cP5s:   #F7CBAC;
+@cP6:    #5F497A;
+@cP6s:   #CCC1D9;
 
 /* Screen Size */
 @sD:    (min-width: 1024px);                        /* Desktop */
@@ -109,9 +122,9 @@ button { width: fit-content; height: 60px; padding: 0 20px; border-radius: 30px;
             i, svg { line-height: normal; }}
         .header__item-action { width: 100%; height: 40px; border-radius: 18.5px; display: none; align-items: center; justify-content: center; background-color: white;
             span { font-size: @fM; }}}
-    .header__item--active { background-color: @c2;
-        > *, > * > * { color: @c1; }
-        .header__item-action { display: flex; }}
+    // .header__item--active { background-color: @c2;
+    //     > *, > * > * { color: @c1; }
+    //     .header__item-action { display: flex; }}
     .header__clock {
         > * { line-height: 100%; color: white; }
         .header__clock-week, .header__clock-time { font-size: @fL; }

@@ -1,0 +1,17 @@
+@import "./style.less";
+.cart-top { width: 100%; gap: 5px; display: flex; align-items: center;
+    .cart-top__icon { color: @c1; }
+    .cart-top__title { width: 100%; color: @c1; font-size: @fL; font-weight: bold; }
+    .cart-top__clear { gap: 5px; display: flex; align-items: center;
+        * { color: @cG4; }
+        span { white-space: nowrap; }}}
+.cart-item { width: 100%; gap: 10px; display: flex;
+    &:not(:nth-child(3)) { padding-top: 15px; border-top: 1px solid @cG5; }
+    .cart-item__left { width: 100%; display: flex; flex-direction: column;
+        .cart-item__name { font-size: @fL;}
+        .cart-item__detail { color: @cG3;}
+        .cart-item__count { margin-top: 5px; display: flex; align-items: center;
+            a { width: 30px; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; background-color: @c2;
+                i, svg { color: @c1; }}
+            span { width: 40px; font-size: @fL; text-align: center; }}}
+    .cart-item__price { font-size: @fL; font-weight: bold; }}

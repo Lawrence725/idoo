@@ -12,6 +12,7 @@
         <meta name="google" content="notranslate">
         <!-- CSS -->
         <link href="./css/menu.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/cart.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/fontawesome-free-6.3.0-web/css/all.css" rel="stylesheet"> <!-- Awesome Icon -->
     </head>
     <body class="menu">
@@ -23,12 +24,213 @@
         <!--------------- Header --------------->
         <section id ="header"></section>
 
-        <!--------------- Main --------------->
-        <section class="main">
-            Menu
+        <!--------------- Categories --------------->
+        <section class="categories">
+            <span class="categories__title">分類</span>
+            <a class="category category--active">
+                <span class="category__name">套餐</span>
+            </a>
+            <a class="category">
+                <span class="category__name">主菜</span>
+            </a>
+            <a class="category">
+                <span class="category__name">甜點湯品飲料酒精</span>
+            </a>
+            <a class="category">
+                <span class="category__name">義大利麵</span>
+            </a>
         </section>
 
+        <!--------------- Main --------------->
+        <section class="main">
+            <span class="main__title">麥町中原店</span>
+            <div class="items">
+                <a class="item">
+                    <span class="item__name">金色三麥經典大拼盤</span>
+                    <span class="item__price">$25</span>
+                </a>
+                <a class="item">
+                    <span class="item__name">金色三麥經典大拼盤</span>
+                    <span class="item__price">$25</span>
+                </a>
+                <a class="item">
+                    <span class="item__name">金色三麥經典大拼盤</span>
+                    <span class="item__price">$25</span>
+                </a>
+                <a class="item item--active">
+                    <span class="item__name">金色三麥經典大拼盤</span>
+                    <span class="item__price">$25</span>
+                </a>
+                <a class="item">
+                    <span class="item__name">金色三麥經典大拼盤</span>
+                    <span class="item__price">$25</span>
+                </a>
+            </div>
+            <div class="addons">
+                <a class="addon addon--group1">
+                    <span class="addon__name">紅茶</span>
+                    <div class="addon__tag">必選</div>
+                </a>
+                <a class="addon addon--group1">
+                    <span class="addon__name">綠茶</span>
+                    <div class="addon__tag">必選</div>
+                </a>
+                <a class="addon addon--group1">
+                    <span class="addon__name">奶茶</span>
+                    <span class="addon__price">+$5</span>
+                    <div class="addon__tag">必選</div>
+                </a>
+                <a class="addon addon--group2 addon--active">
+                    <span class="addon__name">薯條</span>
+                    <div class="addon__tag">必選</div>
+                </a>
+                <a class="addon addon--group2">
+                    <span class="addon__name">薯餅</span>
+                    <span class="addon__price">+$10</span>
+                    <div class="addon__tag">必選</div>
+                </a>
+                <a class="addon addon--group2">
+                    <span class="addon__name">香辣炸物拼盤</span>
+                    <span class="addon__price">+$15</span>
+                    <div class="addon__tag">必選</div>
+                </a>
+                <a class="addon addon--group3">
+                    <span class="addon__name">小辣</span>
+                    <div class="addon__tag"></div>
+                </a>
+                <a class="addon addon--group3 addon--active">
+                    <span class="addon__name">中辣</span>
+                    <div class="addon__tag"></div>
+                </a>
+                <a class="addon addon--group3">
+                    <span class="addon__name">大辣</span>
+                    <div class="addon__tag"></div>
+                </a>
+                <a class="addon">
+                    <span class="addon__name">去蔥</span>
+                </a>
+                <a class="addon">
+                    <span class="addon__name">去鹽</span>
+                </a>
+                <a class="addon">
+                    <span class="addon__name">去香菜</span>
+                </a>
+            </div>
+        </section>
 
+        <!--------------- Footer --------------->
+        <section class="footer">
+            <div class="cart">
+                <div class="cart-top">
+                    <span class="cart-top__title">餐點</span>
+                    <a class="cart-top__clear">
+                        <span>清空</span>
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </div>
+                <!-- 商品 -->
+                <div class="cart-item">
+                    <div class="cart-item__left">
+                        <span class="cart-item__name">金色三麥經典大拼盤</span>
+                        <span class="cart-item__detail">香腸大拼盤 x2・三麥經典洋蔥圈</span>
+                        <span class="cart-item__detail">奶茶・少糖・少冰</span>
+                        <span class="cart-item__detail">備注：飲料一起上</span>
+                        <div class="cart-item__count">
+                            <a><i class="fa-solid fa-minus fa-lg"></i></a>
+                            <span>2</span>
+                            <a><i class="fa-solid fa-plus fa-lg"></i></a>
+                        </div>
+                    </div>
+                    <span class="cart-item__price">$1998</span>
+                    <a class="cart-item__remark">
+                        <div></div>
+                        <span>備註</span>
+                    </a>
+                </div>
+                <div class="cart-item">
+                    <div class="cart-item__left">
+                        <span class="cart-item__name">墨魚醉嗆烏魚子</span>
+                        <span class="cart-item__detail">千島醬・番茄醬</span>
+                        <span class="cart-item__detail">奶茶・少糖・少冰</span>
+                        <div class="cart-item__count">
+                            <a><i class="fa-solid fa-minus fa-lg"></i></a>
+                            <span>2</span>
+                            <a><i class="fa-solid fa-plus fa-lg"></i></a>
+                        </div>
+                    </div>
+                    <span class="cart-item__price">$999</span>
+                    <a class="cart-item__remark cart-item__remark--active">
+                        <div></div>
+                        <span>備註</span>
+                    </a>
+                </div>
+                <div class="cart-item">
+                    <div class="cart-item__left">
+                        <span class="cart-item__name">蜜香滿天飛</span>
+                        <span class="cart-item__detail">備注：餐後上</span>
+                        <div class="cart-item__count">
+                            <a><i class="fa-solid fa-minus fa-lg"></i></a>
+                            <span>1</span>
+                            <a><i class="fa-solid fa-plus fa-lg"></i></a>
+                        </div>
+                    </div>
+                    <span class="cart-item__price">$999</span>
+                    <a class="cart-item__remark">
+                        <div></div>
+                        <span>備註</span>
+                    </a>
+                </div>
+            </div>
+            <div class="totals">
+                <div class="subtotal">
+                    <span class="totals__name">小計</span>
+                    <span class="totals__price">$1998</span>
+                </div>
+                <a class="cart-addon">
+                    <span class="totals__name">訂單加購</span>
+                    <div class="totals__action"><i class="fa-solid fa-plus"></i></div>
+                    <span class="totals__price">$599</span>
+                </a>
+                <a class="discount">
+                    <span class="totals__name">訂單折扣</span>
+                    <div class="totals__action"><i class="fa-solid fa-percent"></i></div>
+                    <span class="totals__price">-$599</span>
+                </a>
+                <div class="total">
+                    <span class="totals__name">總計</span>
+                    <span class="totals__price">$5994</span>
+                </div>
+            </div>
+            <div class="inputs">
+                <a class="remark">
+                    <span class="inputs__name">訂單備注</span>
+                    <div class="inputs__action"><i class="fa-solid fa-tag"></i></div>
+                    <input class="inputs__content" type="text" placeholder="訂單備註" value="套餐分開裝 單點一起裝">
+                </a>
+                <div class="invoice">
+                    <span class="inputs__name">統編</span>
+                    <input class="inputs__content" type="text" placeholder="8碼統編" value="87654321">
+                </div>
+                <div class="carrier">
+                    <span class="inputs__name">載具</span>
+                    <input class="inputs__content" type="text" placeholder="7碼載具" value="/ABCQWER">
+                </div>
+                <div class="deco__receipt">
+                    <div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="payment--cash">
+                    <i class="fa-solid fa-money-bill-wave fa-2x"></i>
+                    <span>現金結帳</span>
+                </button>
+                <button class="payment--mobile">
+                    <i class="fa-solid fa-mobile fa-2x"></i>
+                    <span>行動支付</span>
+                </button>
+            </div>
+        </section>
 
         <!-- Script -->
         <script src="./js/less.js" ></script> <!-- Less -->

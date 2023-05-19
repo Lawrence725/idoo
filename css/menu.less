@@ -1,4 +1,76 @@
 @import "./style.less";
-.menu { gap: 15px;
-
-}
+.menu { padding: 15px 15px 15px 0; gap: 15px; background-color: @cBg;
+    .header__eatin { background-color: @c2 !important;
+        > *, > * > * { color: @c1 !important; }
+        .header__item-action { display: flex !important; }}
+    .categories { min-width: 165px; height: 100%; padding-right: 15px; border-right: 1px dashed @cG4; gap: 10px; display: flex; flex-direction: column; overflow-y: auto;
+        .categories__title { width: 100%; padding-bottom: 10px; margin-bottom: -10px; top: 0; position: sticky; text-align: center; font-size: @fL; font-weight: bold; color: @c1; background-color: rgba(@cBg, 0.95); z-index: 2; }
+        .category { width: 125px; min-height: 50px; max-height: 50px; padding: 0 10px; border-radius: 10px 0 0 10px; display: flex; align-items: center;
+            .category__name { font-size: @fL; color: @cG3; line-height: 120%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+            &.category--active { margin-right: 0px; position: relative; background: @c2;
+                &:before { content: ""; width: 0; height: 0; top: 0; right: -25px; position: absolute;
+                    border-left: 25px solid @c2; border-top: 25px solid transparent; border-bottom: 25px solid transparent; }
+                span { color: @c1; }}}}
+    .main { width: 100%; height: 100vh; position: relative; display: flex; flex-direction: column;
+        .main__title { width: 100%; padding: 15px 0 10px; top: 0; position: absolute; text-align: center; font-size: @fL; font-weight: bold; background-color: rgba(@cBg, 0.95); color: @c1; z-index: 2; }
+        .items { padding: 54px 0 15px; margin-bottom: auto; gap: 10px; display: flex; flex-wrap: wrap; overflow-y: auto;
+            .item { width: calc(33.33% - 6.67px); height: 120px; padding: 7.5px 15px; border-radius: 15px; display: flex; flex-direction: column; justify-content: space-between; background-color: white;
+                &.item--active { border: 1.5px solid @c1; background-color: @c2; }
+                .item__name { font-size: @fXL; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+                .item__price { font-size: @fXL; font-weight: bold; color: @c1; }}}
+        .addons { padding-top: 15px; min-height: 245px; max-height: 245px; padding-bottom: 15px; border-top: 1px solid @cG4; gap: 10px; display: flex; flex-wrap: wrap; overflow-y: auto;
+            .addon { width: calc(20% - 8px); height: 90px; padding: 5px 10px; border-radius: 5px 15px 15px 5px; position: relative; display: flex; flex-direction: column; justify-content: space-between; background-color: white;
+                &.addon--active { border: 1.5px solid @c1; background-color: @c2; }
+                .addon__name { font-size: @fL; line-height: 120%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+                .addon__price { font-size: @fL; font-weight: bold; color: @c1; }
+                .addon__tag { min-width: 35px; height: 30px; padding: 0 5px; border-radius: 15px 0 15px 0; right: 0; bottom: 0; position: absolute; display: flex; align-items: center; justify-content: center; font-size: @fS; color: @cP1; background-color: @cP1s; }
+                &.addon--group2 .addon__tag { color: @cP2; background-color: @cP2s;  }
+                &.addon--group3 .addon__tag { color: @cP3; background-color: @cP3s;  }
+                &.addon--group4 .addon__tag { color: @cP4; background-color: @cP4s;  }
+                &.addon--group5 .addon__tag { color: @cP5; background-color: @cP5s;  }
+                &.addon--group6 .addon__tag { color: @cP6; background-color: @cP6s;  }}}}
+    .footer { min-width: 280px; height: 100%; gap: 5px; display: flex; flex-direction: column;
+        .cart, .totals, .inputs { width: 100%; display: flex; flex-direction: column;align-items: center; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }
+        .cart { height: 100%; padding: 0 10px 10px; gap: 10px; overflow-y: auto; z-index: 0;
+            .cart-top { padding: 10px 0; margin-bottom: -10px; top: 0; position: sticky; background-color: rgba(white, 0.95); z-index: 2; }
+            .cart-item { position: relative;
+                &:not(:nth-child(2)) { padding-top: 10px; border-top: 1px dashed @cG5; }
+                &:nth-child(2) { padding-top: 0; border-top: none; }
+                .cart-item__remark { width: 50px; height: 30px; border-radius: 0 5px 5px 0; right: 0; bottom: 0; position: absolute; display: flex; align-items: center; justify-content: center; background-color: @cBg;
+                    &.cart-item__remark--active { background-color: @cP2s;
+                        &:before { border-right: 15px solid @cP2s; }
+                        span { color: @cP2; }}
+                    &:before { content: ""; width: 0; height: 0; top: 0; left: -15px; position: absolute;
+                        border-right: 15px solid @cBg; border-top: 15px solid transparent; border-bottom: 15px solid transparent; }
+                    div { min-width: 8px; height: 8px; border-radius: 99px; left: -6px; position: absolute; background-color: white; }
+                    span { font-size: @fM; color: @cG4; }}}}
+        .totals { height: fit-content; padding: 5px 10px; gap: 5px; z-index: 1;
+            .subtotal, .cart-addon, .discount, .total { width: 100%; gap: 5px; display: flex; align-items: center; }
+            .totals__name { font-size: @fL; white-space: nowrap; }
+            .totals__price { margin-left: auto; font-size: @fL; font-weight: bold; text-align: right; white-space: nowrap; }
+            .totals__action { min-width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; background-color: @c2;
+                i, svg { color: @c1; }}
+            .subtotal { .totals__name, .totals__price { color: @cG3; }}
+            .cart-addon { .totals__name, .totals__price { color: @c1; }}
+            .discount { .totals__name, .totals__price { color: @cRed; }
+                .totals__action { background-color: rgba(@cRed, 0.2);
+                    i, svg { color: @cRed; }}}}
+        .inputs { height: fit-content; padding: 5px 10px; margin-bottom: 25px; gap: 5px; position: relative; z-index: 2;
+            .remark, .invoice, .carrier { width: 100%; gap: 5px; display: flex; align-items: center; z-index: 2; }
+            .inputs__name { font-size: @fL; white-space: nowrap; color: @cG3; }
+            .inputs__content { max-width: 50%; margin-left: auto; padding: 0 5px; border-bottom: 1px solid @cG5; border-radius: 0; font-size: @fL; text-align: right; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+            .inputs__action { min-width: 28px; height: 28px; border-radius: 5px; display: flex; align-items: center; justify-content: center; background-color: @c2;
+                i, svg { color: @c1; }}
+            .remark {
+                .inputs__name { color: @cP2; }
+                .inputs__content{ pointer-events: none; }
+                .inputs__action { background-color: @cP2s;
+                    i, svg { color: @cP2; }}}}
+        .deco__receipt { width: 100%; min-height: 50px; bottom: -20px; position: absolute; display: flex; align-items: center; justify-content: center; overflow-x: hidden;
+            div { min-width: 30px; max-width: 30px; min-height: 30px; max-height: 30px; border-radius: 3px; background-color: white; transform: rotate(45deg); }}
+        .actions { gap: 15px; display: flex; z-index: 3;
+            .payment--cash, .payment--mobile { width: 100%; height: 100px; border-radius: 20px; gap: 5px; flex-direction: column; align-items: center; justify-content: center;
+                span { font-size: @fL; }
+                i, svg { line-height: normal; }}
+            .payment--cash { border: 2px solid @c1; background-color: @c2;
+                span, i, svg { color: @c1 !important; }}}}}
