@@ -1,0 +1,17 @@
+@import "./style.less";
+.pop__cash {
+    .pop__body { max-width: 800px !important; flex-direction: row !important;
+        .cash__title { font-size: @fL; }
+        .cash__price { margin-top: -20px; font-size: @fXXL; color: @c1; }
+        .cash__confirm { width: 100%; height: 360px; gap: 20px; display: flex; flex-direction: column; align-items: center;
+            .pop__actions { margin-top: auto; gap: 10px;
+                .pop__action { width: 100%; height: 100px; gap: 5px; flex-direction: column;
+                    &.pop__action--minor { width: fit-content; min-width: fit-content; padding: 15px; align-items: flex-start; justify-content: flex-end;
+                        span { font-size: @fL; text-align: left; white-space: nowrap; }}}}}
+        .cash__calculator { min-width: 250px; max-width: 250px; height: 360px; padding-left: 20px; border-left: 1px dashed @cG5; display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+            .calculator__input { width: 100%; font-size: @fXL; text-align: center; color: @c1; -webkit-text-fill-color: @c1; }
+            .calculator__numbers { width: 100%; gap: 10px; display: flex; flex-wrap: wrap;
+                a { width: calc(33.33% - 6.67px); height: 50px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: @fXL; background-color: @cBg;
+                    &.calculator__number--none { background-color: transparent; pointer-events: none; }
+                    &.calculator__number--delete { background-color: transparent;
+                        i, svg { color: @cG4; font-size: unset; }}}}}}}

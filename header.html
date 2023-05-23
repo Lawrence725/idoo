@@ -10,7 +10,7 @@
                 <i class="fa-solid fa-chair fa-xl"></i>
                 <span>內用</span>
             </a>
-            <a class="header__item-action"> <!-- Auto hide when active -->
+            <a class="header__item-action" onclick="popTable()"> <!-- Auto hide when active -->
                 <span>桌號2</span>
             </a>
         </div>
@@ -32,10 +32,86 @@
             </a>
         </div>
         <div class="header__item">
-            <a class="header__item-head">
+            <a class="header__item-head" onclick="popMore()">
                 <i class="fa-solid fa-bars-staggered fa-xl"></i>
                 <span>更多</span>
             </a>
+        </div>
+    </div>
+</section>
+
+<!-- 桌號popup -->
+<section id="pop__table" class="pop pop--center pop__table" onclick="popClose(this)">
+    <div class="pop__body">
+        <span class="pop__title">桌號</span>
+        <div class="table-no">
+            <a>1</a><a class="active">2</a><a>3</a><a>4</a><a>5</a><a>6</a><a>7</a><a>8</a><a>9</a><a>10</a>
+            <a>11</a><a>12</a><a>13</a><a>14</a><a>15</a>
+        </div>
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="popClose(this)">
+                <span>確認桌號</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 更多選單popup -->
+<section id="pop__more" class="pop pop__more" onclick="popMoreClose(this)">
+    <div class="pop__body">
+        <a class="more__action more__action--minor" onclick="popMoreClose(this)">
+            <i class="fa-solid fa-chevron-left fa-xl"></i>
+            <span>收起</span>
+        </a>
+        <a class="more__action">
+            <i class="fa-solid fa-cash-register fa-xl"></i>
+            <span>收銀</span>
+        </a>
+        <a class="more__action">
+            <i class="fa-solid fa-address-card fa-xl"></i>
+            <span>會員</span>
+        </a>
+        <a class="more__action">
+            <i class="fa-solid fa-chart-pie fa-xl"></i>
+            <span>報表</span>
+        </a>
+        <a class="more__action">
+            <i class="fa-solid fa-user-gear fa-xl"></i>
+            <span>權限</span>
+        </a>
+        <div class="more__gap"></div>
+        <a class="more__action">
+            <i class="fa-solid fa-maximize fa-xl"></i>
+            <span>全螢幕</span>
+        </a>
+        <a class="more__action" onclick="popLogout()">
+            <i class="fa-solid fa-id-card-clip fa-xl"></i>
+            <span>陳店員</span>
+        </a>
+        <a class="more__action more__action--minor">
+            <span>200mb/s</span>
+            <span>網路速度</span>
+        </a>
+    </div>
+</section>
+
+<!-- 登出popup -->
+<section id="pop__logout" class="pop pop--center pop__logout" onclick="popClose(this)">
+    <div class="pop__body">
+        <span class="pop__title">確定登出帳號？</span>
+        <span class="pop__content">帳號 陳店員</span>
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="window.location.href='index.html'">
+                <span>確定登出</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
         </div>
     </div>
 </section>

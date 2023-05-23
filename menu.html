@@ -13,6 +13,12 @@
         <!-- CSS -->
         <link href="./css/menu.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/cart.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/pop-more.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/pop-cash.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/pop-addon.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/pop-table.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/pop-remark.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/pop-discount.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/fontawesome-free-6.3.0-web/css/all.css" rel="stylesheet"> <!-- Awesome Icon -->
     </head>
     <body class="menu">
@@ -67,15 +73,15 @@
                 </a>
             </div>
             <div class="addons">
-                <a class="addon addon--group1">
+                <a class="addon addon--group1" onclick="popItemAddon()">
                     <span class="addon__name">紅茶</span>
                     <div class="addon__tag">必選</div>
                 </a>
-                <a class="addon addon--group1">
+                <a class="addon addon--group1" onclick="popItemAddon()">
                     <span class="addon__name">綠茶</span>
                     <div class="addon__tag">必選</div>
                 </a>
-                <a class="addon addon--group1">
+                <a class="addon addon--group1" onclick="popItemAddon()">
                     <span class="addon__name">奶茶</span>
                     <span class="addon__price">+$5</span>
                     <div class="addon__tag">必選</div>
@@ -142,7 +148,7 @@
                         </div>
                     </div>
                     <span class="cart-item__price">$1998</span>
-                    <a class="cart-item__remark">
+                    <a class="cart-item__remark" onclick="popItemRemark()">
                         <div></div>
                         <span>備註</span>
                     </a>
@@ -159,7 +165,7 @@
                         </div>
                     </div>
                     <span class="cart-item__price">$999</span>
-                    <a class="cart-item__remark cart-item__remark--active">
+                    <a class="cart-item__remark cart-item__remark--active" onclick="popItemRemark()">
                         <div></div>
                         <span>備註</span>
                     </a>
@@ -175,7 +181,7 @@
                         </div>
                     </div>
                     <span class="cart-item__price">$999</span>
-                    <a class="cart-item__remark">
+                    <a class="cart-item__remark" onclick="popItemRemark()">
                         <div></div>
                         <span>備註</span>
                     </a>
@@ -186,12 +192,12 @@
                     <span class="totals__name">小計</span>
                     <span class="totals__price">$1998</span>
                 </div>
-                <a class="cart-addon">
+                <a class="cart-addon" onclick="popOrderAddon()">
                     <span class="totals__name">訂單加購</span>
                     <div class="totals__action"><i class="fa-solid fa-plus"></i></div>
                     <span class="totals__price">$599</span>
                 </a>
-                <a class="discount">
+                <a class="discount" onclick="popDiscount()">
                     <span class="totals__name">訂單折扣</span>
                     <div class="totals__action"><i class="fa-solid fa-percent"></i></div>
                     <span class="totals__price">-$599</span>
@@ -202,7 +208,7 @@
                 </div>
             </div>
             <div class="inputs">
-                <a class="remark">
+                <a class="remark" onclick="popOrderRemark()">
                     <span class="inputs__name">訂單備注</span>
                     <div class="inputs__action"><i class="fa-solid fa-tag"></i></div>
                     <input class="inputs__content" type="text" placeholder="訂單備註" value="套餐分開裝 單點一起裝">
@@ -221,7 +227,7 @@
                 </div>
             </div>
             <div class="actions">
-                <button class="payment--cash">
+                <button class="payment--cash" onclick="popCash()">
                     <i class="fa-solid fa-money-bill-wave fa-2x"></i>
                     <span>現金結帳</span>
                 </button>
@@ -232,8 +238,174 @@
             </div>
         </section>
 
+        <!--------------- Popup --------------->
+        <!-- 商品備註popup -->
+        <section id="pop__item-remark" class="pop pop--center pop__remark" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">商品備註</span>
+                <span class="pop__content">金色三麥經典大拼盤</span>
+                <textarea class="remark__content" placeholder="輸入商品備註"></textarea>
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <span>確認</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 訂單備註popup -->
+        <section id="pop__order-remark" class="pop pop--center pop__remark" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">訂單備註</span>
+                <textarea class="remark__content" placeholder="輸入訂單備註"></textarea>
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <span>確認</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 訂單折扣popup -->
+        <section id="pop__discount" class="pop pop--center pop__discount" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">選擇折扣方式</span>
+                <div class="discount__tabs">
+                    <a class="active">％折抵</a>
+                    <a>金額折抵</a>
+                </div>
+                <input class="discount__input" type="text" placeholder="輸入折抵%" value="" disabled>
+                <div class="discount__numbers">
+                    <a>7</a><a>8</a><a>9</a>
+                    <a>4</a><a>5</a><a>6</a>
+                    <a>1</a><a>2</a><a>3</a>
+                    <a class="discount__number--none"></a>
+                    <a>0</a>
+                    <a class="discount__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                </div>
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <span>確認折扣</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 訂單加購popup -->
+        <section id="pop__order-addon" class="pop pop--center pop__addon" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">訂單加購</span>
+                <div class="addon__item">
+                    <span class="addon__item-name">塑膠袋</span>
+                    <div class="addon__item-choices">
+                        <a>不需要</a>
+                        <a class="active">小</a>
+                        <a>中</a>
+                        <a>大</a>
+                    </div>
+                </div>
+                <div class="addon__item">
+                    <span class="addon__item-name">餐具</span>
+                    <div class="addon__item-choices">
+                        <a>不需要</a>
+                        <a class="active">需要</a>
+                    </div>
+                </div>
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <span>確認</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 商品加購popup -->
+        <section id="pop__item-addon" class="pop pop--center pop__addon" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">奶茶</span>
+                <span class="pop__content">金色三麥經典大拼盤套餐</span>
+                <div class="addon__item">
+                    <span class="addon__item-name">甜度</span>
+                    <div class="addon__item-choices">
+                        <a>無糖</a>
+                        <a class="active">微糖</a>
+                        <a>少糖</a>
+                        <a>正常</a>
+                    </div>
+                </div>
+                <div class="addon__item">
+                    <span class="addon__item-name">冰塊</span>
+                    <div class="addon__item-choices">
+                        <a>取冰</a>
+                        <a class="active">少冰</a>
+                        <a>正常</a>
+                    </div>
+                </div>
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <span>確認</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 現金結帳popup -->
+        <section id="pop__cash" class="pop pop--center pop__cash">
+            <div class="pop__body">
+                <div class="cash__confirm">
+                    <span class="pop__title">現金結帳</span>
+                    <span class="cash__title">訂單金額</span>
+                    <span class="cash__price">$5994</span>
+                    <span class="cash__title">找取金額</span>
+                    <span class="cash__price">$6</span>
+                    <div class="pop__actions">
+                        <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                            <span>改用<br>行動支付</span>
+                        </button>
+                        <button class="pop__action" onclick="popClose(this)">
+                            <i class="fa-regular fa-circle-check fa-2x"></i>
+                            <span>確認收款</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="cash__calculator">
+                    <span class="cash__title">計算找零</span>
+                    <input class="calculator__input" type="text" placeholder="輸入實收金額" value="" disabled>
+                    <div class="calculator__numbers">
+                        <a>7</a><a>8</a><a>9</a>
+                        <a>4</a><a>5</a><a>6</a>
+                        <a>1</a><a>2</a><a>3</a>
+                        <a class="calculator__number--none"></a>
+                        <a>0</a>
+                        <a class="calculator__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Script -->
         <script src="./js/less.js" ></script> <!-- Less -->
         <script src="./js/header.js"></script>
+        <script src="./js/menu.js"></script>
     </body>
 </html>

@@ -71,10 +71,10 @@ a:hover                                     { cursor: pointer;
 button                                      { border: none; }
 button:hover                                { cursor: pointer;
     @media @sD                              { box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }}
-input                                       { border: 0; padding: 0; background-color: transparent; }
+input                                       { border: 0; padding: 0; -webkit-text-fill-color: @cG1; background-color: transparent; }
 input:focus                                 { box-shadow: none !important; outline: none; }
 input:-webkit-autofill                      { color: @c1 !important; background-color: transparent !important; box-shadow: 0 0 0px 1000px white inset !important; background-clip: content-box !important; }
-input::placeholder, textarea::placeholder   { color: @cG4; }
+input::placeholder, textarea::placeholder   { color: @cG4; -webkit-text-fill-color: @cG4; }
 textarea                                    { border: 0; resize: none; }
 textarea:focus                              { box-shadow: none !important; outline: none; }
 select                                      { -webkit-appearance: none; -moz-appearance: none; appearance: none; outline: none; border: 0; }
@@ -133,7 +133,7 @@ button { width: fit-content; height: 60px; padding: 0 20px; border-radius: 30px;
     &.pop--full { padding: 70px 0 0;
         .pop__body { border-radius: 20px 20px 0 0; }}
     &.pop--center { align-items: center;
-        .pop__body { max-width: 512px; overflow-y: visible; }}
+        .pop__body { max-width: 500px; overflow-y: visible; }}
     .pop__body { width: 100%; max-width: 1024px; max-height: 100%; padding: 20px; border-radius: 40px; position: relative; display: flex; flex-direction: column; align-items: center; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
         .pop__close { width: 30px; height: 30px; min-height: 30px; margin: -20px -5px -30px auto; border-radius: 99px; top: -5px; position: sticky; display: flex; align-items: center; justify-content: center; color: @cG4; background-color: rgba(255, 255, 255, 0.75);
             &.pop__close--fixed { margin: 0; top: 17px; right: 17px; position: fixed; background-color: rgba(0,0,0,0.9); box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
@@ -145,8 +145,8 @@ button { width: fit-content; height: 60px; padding: 0 20px; border-radius: 30px;
                 i, svg { color: @cGreen; }}
             .pop__icon--red { border: 6px solid @cRed;
                 i, svg { color: @cRed; }}}
-        .pop__title { font-size: @fXXL; }
-        .pop__content { margin-top: -20px; font-size: @fXL; color: @cG3; }
+        .pop__title { font-size: @fXL; font-weight: bold; color: @c1; }
+        .pop__content { margin-top: -20px; font-size: @fL; color: @cG3; }
         .pop__actions { width: 100%; display: flex; justify-content: space-between; }
         .pop__action { min-width: 60px; }
         .pop__action--minor { background-color: @cBg;

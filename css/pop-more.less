@@ -1,0 +1,17 @@
+@import "./style.less";
+.pop__more { padding: 0 !important; background-color: transparent !important; align-items: flex-end !important; justify-content: flex-start !important;
+    .pop__body { width: fit-content !important; padding: 10px 20px 10px 10px !important; border-radius: 0 30px 30px 0 !important; gap: 10px !important; background-color: @c1 !important; flex-direction: row !important; animation-name: popright !important;
+        .more__action { width: 80px; height: 80px; border-radius: 18.5px; gap: 2px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            &.more__action--minor > * { opacity: 0.5; }
+            i, svg { color: white; line-height: normal; }
+            span { color: white; font-size: @fL; }}
+        .more__gap { width: 2px; height: 30px; border-radius: 99px; background-color: rgba(white, 0.2); }
+    }}
+
+@keyframes popright { 0% { margin-left: -100vw; opacity: 0; } 50% { opacity: 1; } 100% { margin-left: 0; opacity: 1; }}
+@keyframes popleft { 0% { margin-left: 0; opacity: 1; } 50% { opacity: 1; } 100% { margin-left: -100vw; opacity: 0; }}
+
+.pop__logout {
+    .pop__title { font-size: @fXXL !important; font-weight: normal !important; color: @cG1 !important; }
+    .pop__content { font-size: @fXL !important; }
+    .pop__action:not(.pop__action--minor) { background-color: @cRed; }}
