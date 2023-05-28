@@ -1,0 +1,45 @@
+@import "./style.less";
+.orders { padding: 15px 15px 15px 0; gap: 15px; background-color: @cBg;
+    .header__orders { background-color: @c2 !important;
+        > *, > * > * { color: @c1 !important; }
+        .header__item-action { display: flex !important; }}
+    .main { width: 100%; height: 100vh; padding: 0 30px 15px 0; display: flex; flex-direction: column; overflow-x: hidden; overflow-y: auto;
+        .filters { width: calc(100% + 30px); padding-top: 15px; gap: 10px; top: 0; position: sticky; display: flex; align-items: center; background-color: @cBg; z-index: 2;
+            .filters__dropdown { height: 30px; padding: 0 10px; border-radius: 99px; gap: 5px; display: flex; align-items: center; background-color: white;
+                span { font-size: @fS; }
+                i, svg { color: @c1; }}
+            .filters__search { width: 200px; height: 30px; padding: 0 10px; margin-left: auto; border: 1px solid @cG5; border-radius: 99px; display: flex; font-size: @fS; }
+            .filters__search-button { width: 30px; height: 30px; right: 0; position: absolute; display: flex; align-items: center; justify-content: center;
+                i, svg { color: @c1; }}}
+        .titles { width: calc(100% + 30px); padding: 15px 30px 15px 0; top: 45px; position: sticky; display: flex; align-items: center; background-color: @cBg; z-index: 2;
+            span { width: 100%; text-align: center; font-size: @fS; font-weight: bold; }}
+        .order { width: 100%; height: 70px; min-height: 70px; padding: 5px 0; border-top: 1px solid @cG5; border-radius: 0; gap: 5px; display: flex; align-items: center;
+            &.order--active { border: none; border-radius: 10px 0 0 10px; position: relative; background: @c2;
+                &:before { content: ""; width: 0; height: 0; top: 0; right: -30px; position: absolute;
+                    border-left: 30px solid @c2; border-top: 35px solid transparent; border-bottom: 35px solid transparent; }}
+            .order__date-time, .order__platform-no, .order__type-info, .order__payment-price, .order__state {
+                width: 20%; display: flex; align-items: center; justify-content: center; }
+            .order__date-time { flex-direction: column;
+                .order__time { font-size: @fM; }
+                .order__date { font-size: @fS; color: @cG3; }}
+            .order__platform-no { gap: 5px; justify-content: flex-start;
+                .order__platform { width: 30px; height: 30px; border-radius: 5px; }
+                .order__no { font-size: @fS; color: @cG3; overflow-wrap: anywhere; }}
+            .order__type-info { flex-direction: column;
+                .order__type { font-size: @fM; }
+                .order__info { gap: 5px; display: flex; align-items: center;
+                    span { font-size: @fS; color: @cG3;
+                        &:not(:first-child) { padding-left: 5px; border-left: 1px solid @cG4; }}}}
+            .order__payment-price { gap: 5px; justify-content: flex-start;
+                .order__payment { width: 34px; height: 34px; border: 1.5px solid white; border-radius: 5px; display: flex; align-items: center; justify-content: center;
+                    img { max-width: 24px; max-height: 20px; }}
+                .order__price { font-size: @fM; font-weight: bold; color: @c1; }}
+            .order__state { gap: 5px; justify-content: flex-end;
+                span { font-size: @fS; overflow-wrap: anywhere; text-align: right; }
+                &.order__state--error {
+                    span { color: @cRed; }
+                    i, svg { color: @cRed; }}
+                &.order__state--warning {
+                    span { color: @cOrange; }
+                    i, svg { color: @cOrange; }}}}}
+    .footer .cart-top__title { text-align: center; }}
