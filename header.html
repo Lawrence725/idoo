@@ -89,6 +89,10 @@
             <i class="fa-solid fa-maximize fa-xl"></i>
             <span>全螢幕</span>
         </a>
+        <a class="more__action" onclick="popLanguage()">
+            <i class="fa-solid fa-globe fa-xl"></i>
+            <span>語言</span>
+        </a>
         <a class="more__action" onclick="popLogout()">
             <i class="fa-solid fa-id-card-clip fa-xl"></i>
             <span>陳店員</span>
@@ -111,6 +115,29 @@
             </button>
             <button class="pop__action" onclick="window.location.href='index.html'">
                 <span>確定登出</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 選擇語言popup -->
+<section id="pop__language" class="pop pop--center pop__language" onclick="popClose(this)">
+    <div class="pop__body">
+        <span class="pop__title">Choose language</span>
+        <div class="pop__content">
+            <div class="language-list">
+                <a class="language-list--current">English</a>
+                <a>中文</a>
+                <a>日本語</a>
+            </div>
+        </div>
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="window.location.href='index.html'">
+                <span>Confirm</span>
                 <i class="fa-solid fa-arrow-right fa-xl"></i>
             </button>
         </div>

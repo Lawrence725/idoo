@@ -29,8 +29,11 @@ function popTable() { document.getElementById("pop__table").style.display = "fle
 // 更多選單popup
 function popMore() { document.getElementById("pop__more").style.display = "flex";}
 
-// 更多選單popup
+// 登出popup
 function popLogout() { document.getElementById("pop__logout").style.display = "flex";}
+
+// 選擇語言popup
+function popLanguage() { document.getElementById("pop__language").style.display = "flex";}
 
 // 更多選單popup close
 function popMoreClose(e) {
