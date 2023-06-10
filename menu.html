@@ -275,15 +275,80 @@
             </div>
         </section>
 
-        <!-- 訂單折扣popup -->
+        <!-- 訂單折扣popup 折扣 幾折 -->
         <section id="pop__discount" class="pop pop--center pop__discount" onclick="popClose(this)">
             <div class="pop__body">
                 <span class="pop__title">選擇折扣方式</span>
                 <div class="discount__tabs">
-                    <a class="active">％折抵</a>
-                    <a>金額折抵</a>
+                    <a class="active">折扣 <span class="fS">幾折</span></a>
+                    <a onclick="popClose(this);popDiscountCash();">折讓 <span class="fS">$</span></a>
                 </div>
-                <input class="discount__input" type="text" placeholder="輸入折抵%" value="" disabled>
+                <div class="discount__tabs option">
+                    <a>75折</a>
+                    <a>8折</a>
+                    <a>85折</a>
+                    <a>9折</a>
+                    <a class="active">95折</a>
+                </div>
+
+                <!-- 未輸入數字時顯示 -->
+                <div class="discount__result">
+                    <input class="discount__input" type="text" placeholder="輸入幾折" value="" disabled>
+                </div>
+
+                <!-- 輸入數字後顯示 -->
+                <div class="discount__result">
+                    <input class="discount__input" type="text" placeholder="輸入幾折" value="95" disabled>
+                    <b>折</b>
+                </div>
+
+                <div class="discount__numbers">
+                    <a>7</a><a>8</a><a>9</a>
+                    <a>4</a><a>5</a><a>6</a>
+                    <a>1</a><a>2</a><a>3</a>
+                    <a class="discount__number--none"></a>
+                    <a class="discount__number--none"></a>
+                    <a class="discount__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                </div>
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <span>確認折扣</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 訂單折扣popup 折讓 $ -->
+        <section id="pop__discount_cash" class="pop pop--center pop__discount" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">選擇折扣方式</span>
+                <div class="discount__tabs">
+                    <a onclick="popClose(this);popDiscount();">折扣 <span class="fS">幾折</span></a>
+                    <a class="active">折讓 <span class="fS">$</span></a>
+                </div>
+                <div class="discount__tabs option">
+                    <a>$25</a>
+                    <a>$20</a>
+                    <a>$15</a>
+                    <a>$10</a>
+                    <a>$5</a>
+                </div>
+
+                <!-- 未輸入數字時顯示 -->
+                <div class="discount__result">
+                    <input class="discount__input" type="text" placeholder="輸入折抵金額" value="" disabled>
+                </div>
+
+                <!-- 輸入數字後顯示 -->
+                <div class="discount__result">
+                    <b>$</b>
+                    <input class="discount__input" type="text" placeholder="輸入折抵金額" value="10" disabled>
+                </div>
+                
                 <div class="discount__numbers">
                     <a>7</a><a>8</a><a>9</a>
                     <a>4</a><a>5</a><a>6</a>
