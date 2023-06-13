@@ -1,0 +1,105 @@
+@import "./style.less";
+.pop__cash {
+    .pop__body { max-width: 800px !important; flex-direction: row !important;
+        .cash__title { font-size: @fL; }
+        .cash__price { margin-top: -20px; font-size: @fXXL; color: @c1; }
+        .cash__confirm { width: 100%; height: 360px; gap: 20px; display: flex; flex-direction: column; align-items: center;
+            .pop__actions { margin-top: auto; gap: 10px;
+                .pop__action { width: 100%; height: 100px; gap: 5px; flex-direction: column;
+                    &.pop__action--minor { width: fit-content; min-width: fit-content; padding: 15px; align-items: flex-start; justify-content: flex-end;
+                        span { font-size: @fL; text-align: left; white-space: nowrap; }}}}}
+        .cash__calculator { min-width: 250px; max-width: 250px; height: 360px; padding-left: 20px; border-left: 1px dashed @cG5; display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+            .calculator__input { width: 100%; font-size: @fXL; text-align: center; color: @c1; -webkit-text-fill-color: @c1; }
+            .calculator__numbers { width: 100%; gap: 10px; display: flex; flex-wrap: wrap;
+                a { width: calc(33.33% - 6.67px); height: 50px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: @fXL; background-color: @cBg;
+                    &.calculator__number--none { background-color: transparent; pointer-events: none; }
+                    &.calculator__number--delete { background-color: transparent;
+                        i, svg { color: @cG4; font-size: unset; }}}}}}}
+.pop__checkout {
+    .pop__body { position: relative; z-index: 1; }
+    .order__setting { display: flex; flex-flow: nowrap; gap: 20px; justify-content: space-between; width: 100%; margin-top: -10px;
+        .order__setting__note { width: 50%; height: 150px; padding: 10px; text-align: center; background-color: @cBg; border-radius: 15px; }
+        .order__setting__invoice { width: 50%; display: flex; flex-flow: wrap; align-content: space-between;
+            .order__setting__tax-id, .order__setting__e-invoice {
+                position: relative;
+                > input { width: 100%; height: 65px; padding: 10px; text-align: right; background-color: @cBg; border-radius: 15px; }
+                > b { display: block; position: absolute; left: 10px; top: 32%; bottom: 0; margin: auto 0; font-weight: 600; }
+            }
+        }
+    }
+    .payment__option { display: flex; flex-flow: nowrap; gap: 15px; justify-content: space-between; margin-top: -10px;
+        > * { display: flex; flex-flow: wrap; justify-content: center; align-items: center; align-content: center; width: 100%; height: 120px; padding: 10px; background-color: #FFFFFF; border: 1px solid @cG4; border-radius: 30px; 
+            > i { color: @cG4 !important; padding: 15px 0; }
+            > b { color: @cG4 !important; font-weight: 500; }
+            i.icon-contactless { display: inline-block; width: 30px; height: 30px; background: url("../img/icon/contactless.svg") no-repeat center; background-size: contain; }
+        }
+        .active { background: linear-gradient(0deg, rgba(135, 118, 80, 0.2), rgba(135, 118, 80, 0.2)), #FFFFFF; border: none;
+            > i { color: @c1 !important; }
+            > b { color: @c1 !important; font-weight: 500; }
+            i.icon-contactless { background-image: url("../img/icon/contactless_active.svg"); }
+        }
+    }
+    .pop__actions { width: 100%; position: relative; justify-content: flex-end !important;
+        button:not(.pop__action--minor) { height: 80px; margin-left: 10px; line-height: 110%; border-radius: 30px;
+            .fs { color: #cabda0 !important; font-size: @fS !important; }
+        }
+        .pop__action.close { background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), linear-gradient(0deg, #EB5757, #EB5757), #877650; 
+            > * { color: @cRed !important; }
+        }
+        .pop__action--minor { position: absolute; left: 0; top: 0; bottom: 0; margin: auto 0; }
+    }
+    .pop__pane { width: 100%; padding-top: 85px; }
+    .pop__action--cash { 
+        .pop__action__member { margin: -85px 0 20px 0;
+            > h2 { width: 100%; text-align: center; }
+            > div { display: flex; flex-flow: nowrap; gap: 20px; justify-content: space-between; 
+                > * { width: 100%; height: 50px; color: @cG4; 
+                    font-weight: 600; background-color: #FFFFFF; border: 1px solid @cG4; border-radius: 30px; 
+                    > i { color: @cG4 !important; }
+                }
+                .active { color: @c1; background: linear-gradient(0deg, rgba(135, 118, 80, 0.2), rgba(135, 118, 80, 0.2)), #FFFFFF; 
+                    > i { color: @c1 !important; }
+                }
+            }
+        }
+    }
+    .pop__action--contactless {
+        i.icon-contactless { display: inline-block; width: 24px; height: 24px; background: url("../img/icon/contactless_white.svg") no-repeat center; background-size: contain; }
+    }
+    .cash__calculator { position: relative; width: 270px;  padding: 15px 20px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; background-color: #FFFFFF; box-shadow: inset 5px 0px 20px rgba(55, 84, 170, 0.2); z-index: 0; border-radius: 0px 30px 30px 0px;
+        /*margin-left: -270px; opacity: 0;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;*/
+        .cash__title { margin-bottom: 10px; font-size: @fM; font-weight: 600; color: @c1; }
+        .cash__tabs { width: 100%; gap: 10px; display: flex;
+            a { width: 100%; height: 30px; padding: 10px; border: 1px solid @cG5; border-radius: 99px; display: flex; align-items: center; justify-content: center; color: @cG1; font-size: @fM;
+            &.active { border: none; background-color: @c2; color: @c1; 
+            }}}
+        .calculator__input { width: 100%; margin: 10px auto; font-size: @fXL; text-align: center; color: @c1; -webkit-text-fill-color: @c1; }
+        .calculator__numbers { width: 100%; gap: 10px; padding-bottom: 15px; margin-bottom: 13px; display: flex; flex-wrap: wrap; background: url("../img/icon/dash.svg") repeat-x center bottom; 
+            a { width: calc(33.33% - 6.67px); height: 50px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: @fXL; background-color: @cBg;
+                &.calculator__number--none { background-color: transparent; pointer-events: none; }
+                &.calculator__number--delete { background-color: transparent;
+                    i, svg { color: @cG4; font-size: unset; }}}}
+        .calculator__row { width: 100%; margin-bottom: 3px; display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center;
+            > span { display: block; font-size: @fL; }
+        }
+        .calculator__row.receivables > span { color: #000000; font-weight: bold; }
+        .calculator__row.give-change > span { color: @c1; font-weight: bold; }
+    }
+        
+}
+.pop__checkout--change { 
+    .pop__body { width: 500px;
+        .pop__title { color: @cG1 !important; font-size: @fXXL !important; font-weight: 600 !important; }
+        .pop__content.fr { color: @cRed; }
+    }
+}
+.pop__checkout--finished {
+    .pop__body { width: 500px; overflow: inherit !important;
+        .pop__title { color: @cG1 !important; font-size: @fXXXL !important; font-weight: 600 !important; }
+        .pop__content { font-size: @fXXL !important; }
+    }
+}
+
+@keyframes popright { 0% { margin-left: -270px; opacity: 0; } 100% { margin-left: 0; opacity: 1; }}

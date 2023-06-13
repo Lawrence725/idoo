@@ -14,7 +14,7 @@
         <link href="./css/menu.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/cart.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/pop-more.less" rel="stylesheet/less" type="text/css"/>
-        <link href="./css/pop-cash.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/pop-payment.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/pop-addon.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/pop-table.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/pop-remark.less" rel="stylesheet/less" type="text/css"/>
@@ -207,8 +207,12 @@
                     <span class="totals__name">總計</span>
                     <span class="totals__price">$5994</span>
                 </div>
+                <div class="deco__receipt">
+                    <div></div><div></div><div></div><div></div><div></div><div></div>
+                    <div></div><div></div><div></div><div></div><div></div>
+                </div>
             </div>
-            <div class="inputs">
+            <!-- <div class="inputs">
                 <a class="remark" onclick="popOrderRemark()">
                     <span class="inputs__name">訂單備注</span>
                     <div class="inputs__action"><i class="fa-solid fa-tag"></i></div>
@@ -226,15 +230,19 @@
                     <div></div><div></div><div></div><div></div><div></div><div></div>
                     <div></div><div></div><div></div><div></div><div></div>
                 </div>
-            </div>
+            </div> -->
             <div class="actions">
-                <button class="payment--cash" onclick="popCash()">
+                <!-- <button class="payment--cash" onclick="popCash()">
                     <i class="fa-solid fa-money-bill-wave fa-2x"></i>
                     <span>現金結帳</span>
                 </button>
                 <button class="payment--mobile">
                     <i class="fa-solid fa-mobile fa-2x"></i>
                     <span>行動支付</span>
+                </button> -->
+                <button class="payment--checkout" onclick="popCheckout()">
+                    <i class="fa-solid fa-cash-register fa-lg"></i>
+                    <span>結帳</span>
                 </button>
             </div>
         </section>
@@ -335,7 +343,7 @@
                     <a>$20</a>
                     <a>$15</a>
                     <a>$10</a>
-                    <a>$5</a>
+                    <a class="active">$5</a>
                 </div>
 
                 <!-- 未輸入數字時顯示 -->
@@ -465,6 +473,209 @@
                         <a>0</a>
                         <a class="calculator__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 結帳popup -->
+        <section id="pop__checkout" class="pop pop--center pop__checkout" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">結帳</span>
+                <h2>訂單設定</h2>
+                <div class="order__setting">
+                    <textarea class="order__setting__note" placeholder="輸入訂單備註"></textarea>
+
+                    <div class="order__setting__invoice">
+                        <div class="order__setting__tax-id">
+                            <input type="text" placeholder="12345678">
+                            <b>統編</b>
+                        </div>
+                        <div class="order__setting__e-invoice">
+                            <input type="text" placeholder="/ASDFGHJ">
+                            <b>載具</b>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>結帳方式</h2>
+
+                <div class="payment__option">
+                    <button class="active" onclick="popClose(this);popCheckoutChange();">
+                        <i class="fa-solid fa-mobile fa-2xl"></i>
+                        <b>行動支付</b>
+                    </button>
+
+                    <button class="active">
+                        <i class="fa-solid fa-money-bill-wave fa-2xl"></i>
+                        <b>現金結帳</b>
+                    </button>
+
+                    <button>
+                        <i class="icon-contactless"></i>
+                        <b>靠卡付款</b>
+                    </button>
+
+                    <button class="active">
+                        <b>稍後收款</b>
+                    </button>
+                </div>
+
+                <!-- 一開啟結帳pop的畫面 -->
+                <div class="pop__pane pop__action--none">
+                    <div class="pop__actions">
+                        <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                            <i class="fa-solid fa-xmark fa-xl"></i>
+                        </button>
+                        <button class="pop__action" onclick="popClose(this);popCheckoutFinished();">
+                            <span>確認收款</span>
+                            <i class="fa-regular fa-circle-check fa-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 按行動支付的畫面 -->
+                <div class="pop__pane pop__action--mobile">
+                    <div class="pop__actions">
+                        <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                            <i class="fa-solid fa-xmark fa-xl"></i>
+                        </button>
+                        <button class="pop__action close">
+                            <span>關閉客顯</span>
+                            <i class="fa-regular fa-circle-xmark fa-xl"></i>
+                        </button>
+                        <button class="pop__action">
+                            <span>出示結帳碼</span>
+                            <i class="fa-solid fa-qrcode  fa-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 按現金結帳的畫面 -->
+                <div class="pop__pane pop__action--cash">
+                    <div class="pop__action__member">
+                        <h2>會員</h2>
+                        <div>
+                            <button class="active"><i class="fa-solid fa-keyboard fa-lg"></i>電話累積回饋</button>
+                            <button><i class="fa-solid fa-qrcode  fa-lg"></i>會員掃碼核銷</button>
+                        </div>
+                    </div>
+
+                    <div class="pop__actions">
+                        <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                            <i class="fa-solid fa-xmark fa-xl"></i>
+                        </button>
+                        <button class="pop__action close">
+                            <span>關閉客顯</span>
+                            <i class="fa-regular fa-circle-xmark fa-xl"></i>
+                        </button>
+                        <button class="pop__action" onclick="popClose(this);popCheckoutFinished();">
+                            <span>確認收款</span>
+                            <i class="fa-regular fa-circle-check fa-xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 按靠卡付款的畫面 -->
+                <div class="pop__pane pop__action--contactless">
+                    <div class="pop__actions">
+                        <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                            <i class="fa-solid fa-xmark fa-xl"></i>
+                        </button>
+                        <button class="pop__action" onclick="popClose(this);popCheckoutFinished();">
+                            <span>進行靠卡</span>
+                            <i class="icon-contactless"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 按稍後付款的畫面 -->
+                <div class="pop__pane pop__action--later">
+                    <div class="pop__actions">
+                        <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                            <i class="fa-solid fa-xmark fa-xl"></i>
+                        </button>
+                        <button class="pop__action" onclick="popClose(this);popCheckoutFinished();">
+                            <span>成立訂單<br>
+                                <span class="fs">稍後訂單列表收款</span>
+                            </span>
+                            <i class="fa-solid fa-arrow-right fa-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 現金結帳 計算找零 -->
+            <div id="cash__calculator" class="cash__calculator">
+                <span class="cash__title">計算找零</span>
+                <div class="cash__tabs">
+                    <a class="active">100</a>
+                    <a>500</a>
+                    <a>1000</a>
+                </div>
+                <input class="calculator__input" type="text" placeholder="輸入實收金額" value="" disabled>
+                <div class="calculator__numbers">
+                    <a>7</a><a>8</a><a>9</a>
+                    <a>4</a><a>5</a><a>6</a>
+                    <a>1</a><a>2</a><a>3</a>
+                    <a class="calculator__number--none"></a>
+                    <a>0</a>
+                    <a class="calculator__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                </div>
+                <div class="calculator__row">
+                    <span>訂單總計</span><span>$5994</span>
+                </div>
+                <div class="calculator__row">
+                    <span>會員折抵</span><span>-$10</span>
+                </div>
+                <div class="calculator__row receivables">
+                    <span>應收</span><span>$5984</span>
+                </div>
+                <div class="calculator__row">
+                    <span>實收</span><span>$6000</span>
+                </div>
+                <div class="calculator__row give-change">
+                    <span>找零</span><span>$6</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 切換付款方式popup -->
+        <section id="pop__checkout--change" class="pop pop--center pop__checkout--change" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">確認改成行動支付？</span>
+                <span class="pop__content fr">消費者已使用之點數優惠券將自動退還</span>
+                
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this);popCheckout();">
+                        <span>行動支付</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 訂單已成立popup -->
+        <section id="pop__checkout--finished" class="pop pop--center pop__checkout--finished" onclick="popClose(this)">
+            <div class="pop__body">
+                <div class="pop__icons">
+                    <div class="pop__icon pop__icon--green">
+                        <i class="fa-solid fa-check fa-2xl"></i>
+                    </div>
+                </div>
+
+                <span class="pop__title">訂單已成立</span>
+                <span class="pop__content">訂單 0046097831</span>
+
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
                 </div>
             </div>
         </section>

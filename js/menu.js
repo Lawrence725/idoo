@@ -18,3 +18,14 @@ function popItemAddon() { document.getElementById("pop__item-addon").style.displ
 
 // 現金結帳popup
 function popCash() { document.getElementById("pop__cash").style.display = "flex";}
+
+// 結帳popup
+function popCheckout() { document.getElementById("pop__checkout").style.display = "flex";}
+/*function test() { document.getElementById("cash__calculator").style.animationName = "popright"; }*/
+
+// 切換付款方式popup
+function popCheckoutChange() { document.getElementById("pop__checkout--change").style.display = "flex";}
+
+// 訂單已成立popup
+function popCheckoutFinished() { document.getElementById("pop__checkout--finished").style.display = "flex";}
+
