@@ -1,0 +1,39 @@
+@import "./style.less";
+.pop__receipt { 
+    .pop__body { max-width: 800px !important;
+        .receipt-list { width: 100%; margin: 0 auto; padding: 0 20px;
+            .receipt-list__title { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center; padding: 6px 5px; 
+                > div { width: 33%; font-weight: bold; text-align: center; }
+            }
+
+            .receipt-list__row { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center; padding: 8px 5px; text-align: center; border-top: 1px solid @cG4; 
+                > div { width: 33%; text-align: center; font-size: @fXL; 
+                    > del { color: @cG3; font-size: @fXL; }
+                }
+            }
+
+            .receipt-list__time--cancel { color: @cRed; }
+        }
+
+        .pop__actions { width: 100%; position: relative; justify-content: flex-end !important;
+            button:not(.pop__action--minor) { min-width: 240px; height: 80px; margin-left: 10px; line-height: 130%; border-radius: 30px;
+                .fs { color: @cP7s !important; font-size: @fM !important; }
+            }
+            .pop__action.close { background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), linear-gradient(0deg, @cRed, @cRed), @c1; 
+                > * { color: @cRed !important; }
+            }
+            .pop__action--minor { position: absolute; left: 0; top: 0; bottom: 0; margin: auto 0; }
+            .pop__action.re-send { background: linear-gradient(0deg, rgba(135, 118, 80, 0.2), rgba(135, 118, 80, 0.2)), #FFFFFF; border: 1px solid @c1;
+                > span { color: @c1 !important; 
+                    > i { color: @c1 !important; }
+                }
+            }
+        }
+    }
+}
+.pop__receipt--resend, .pop__receipt--print {
+    .pop__body { width: 500px; overflow: inherit !important;
+        .pop__title { color: @cG1 !important; font-size: @fXXXL !important; font-weight: 600 !important; }
+        .pop__content { font-size: @fXXL !important; }
+    }
+}

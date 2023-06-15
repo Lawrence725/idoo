@@ -14,6 +14,7 @@
         <link href="./css/orders.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/cart.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/pop-more.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/pop-order.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/fontawesome-free-6.3.0-web/css/all.css" rel="stylesheet"> <!-- Awesome Icon -->
     </head>
     <body class="orders">
@@ -356,7 +357,7 @@
                 </div>
             </div>
             <div class="inputs">
-                <a class="receipt" onclick="">
+                <a class="receipt" onclick="popReceipt()">
                     <span class="inputs__name">發票</span>
                     <div class="inputs__action"><i class="fa-solid fa-file-invoice-dollar"></i></div>
                     <span class="inputs__value"><s>NB-12345678</s>NB-12345678</span>
@@ -394,8 +395,103 @@
             </div>
         </section>
 
+        <!-- 發票紀錄popup -->
+        <section id="pop__receipt" class="pop pop--center pop__receipt" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">發票紀錄</span>
+                
+                <div class="receipt-list">
+                    <div class="receipt-list__title">
+                        <div>開立時間</div>
+                        <div>發票號碼</div>
+                        <div class="receipt-list__time--cancel">作廢時間</div>
+                    </div>
+                    <div class="receipt-list__row">
+                        <div class="receipt-list__time--open">2022/01/22 11:00</div>
+                        <div class="receipt-list__id">NB-12345678</div>
+                        <div class="receipt-list__time--cancel"></div>
+                    </div>
+                    <div class="receipt-list__row">
+                        <div class="receipt-list__time--open">2022/01/22 11:00</div>
+                        <div class="receipt-list__id"><del>NB-12345678</del></div>
+                        <div class="receipt-list__time--cancel">2022/01/22 10:45</div>
+                    </div>
+                    <div class="receipt-list__row">
+                        <div class="receipt-list__time--open">2022/01/22 11:00</div>
+                        <div class="receipt-list__id"><del>NB-12345678</del></div>
+                        <div class="receipt-list__time--cancel">2022/01/22 10:45</div>
+                    </div>
+                </div>
+                  
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+
+                    <button class="pop__action re-send" onclick="popReceiptResend()">
+                        <span><i class="fa-solid fa-repeat fa-sm"></i> 重開發票<br>
+                            <span class="fs">作廢原有發票並開立新發票</span>
+                        </span>
+                    </button>
+
+                    <button class="pop__action" onclick="popReceiptPrint()">
+                        <span><i class="fa-solid fa-print fa-sm"></i> 補印發票<br>
+                            <span class="fs">原有發票補印證明聯</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 發票重開成功popup -->
+        <section id="pop__receipt--resend" class="pop pop--center pop__receipt--resend" onclick="popClose(this)">
+            <div class="pop__body">
+                <div class="pop__icons">
+                    <div class="pop__icon pop__icon--green">
+                        <i class="fa-solid fa-check fa-2xl"></i>
+                    </div>
+                </div>
+
+                <span class="pop__title">發票重開成功</span>
+                <span class="pop__content">發票 NB-12345678</span>
+
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 發票補印成功popup -->
+        <section id="pop__receipt--print" class="pop pop--center pop__receipt--print" onclick="popClose(this)">
+            <div class="pop__body">
+                <div class="pop__icons">
+                    <div class="pop__icon pop__icon--green">
+                        <i class="fa-solid fa-check fa-2xl"></i>
+                    </div>
+                </div>
+
+                <span class="pop__title">發票補印成功</span>
+                <span class="pop__content">發票 NB-12345678</span>
+
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <!-- Script -->
         <script src="./js/less.js" ></script> <!-- Less -->
         <script src="./js/header.js"></script>
+        <script src="./js/order.js"></script>
     </body>
 </html>
