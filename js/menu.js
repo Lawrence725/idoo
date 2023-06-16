@@ -21,7 +21,6 @@ function popCash() { document.getElementById("pop__cash").style.display = "flex"
 
 // 結帳popup
 function popCheckout() { document.getElementById("pop__checkout").style.display = "flex";}
-/*function test() { document.getElementById("cash__calculator").style.animationName = "popright"; }*/
 
 // 切換付款方式popup
 function popCheckoutChange() { document.getElementById("pop__checkout--change").style.display = "flex";}
@@ -29,3 +28,14 @@ function popCheckoutChange() { document.getElementById("pop__checkout--change").
 // 訂單已成立popup
 function popCheckoutFinished() { document.getElementById("pop__checkout--finished").style.display = "flex";}
 
+// 開啟dqr popup
+function popDqr() { 
+    $('#pop__dqr').slideDown(300);
+}
+
+// 關閉滿版popup
+$(function(){
+    $('.pop__fullscreen__close').click(function(){
+        $(this).closest('.pop__fullscreen').slideUp(300);
+    });
+});

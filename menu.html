@@ -560,8 +560,8 @@
                     <div class="pop__action__member">
                         <h2>會員</h2>
                         <div>
-                            <button class="active"><i class="fa-solid fa-keyboard fa-lg"></i>電話累積回饋</button>
-                            <button><i class="fa-solid fa-qrcode  fa-lg"></i>會員掃碼核銷</button>
+                            <button class="active" onclick="popDqr()"><i class="fa-solid fa-keyboard fa-lg"></i>電話累積回饋</button>
+                            <button onclick="popDqr()"><i class="fa-solid fa-qrcode  fa-lg"></i>會員掃碼核銷</button>
                         </div>
                     </div>
 
@@ -685,8 +685,16 @@
             </div>
         </section>
 
+        <!-- 開啟dqr popup -->
+        <section id="pop__dqr" class="pop__fullscreen">
+            <button class="pop__fullscreen__close"><i class="fa-solid fa-angle-up fa-2xl"></i></button>
+
+            <iframe width="100%" height="100%" src="https://lawrence725.github.io/dqr/"></iframe>
+        </section>
+
         <!-- Script -->
         <script src="./js/less.js" ></script> <!-- Less -->
+        <script src="./js/jquery-3.7.0.min.js"></script>
         <script src="./js/header.js"></script>
         <script src="./js/menu.js"></script>
     </body>
