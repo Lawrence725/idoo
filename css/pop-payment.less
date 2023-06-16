@@ -47,6 +47,14 @@
             > * { color: @cRed !important; }
         }
         .pop__action--minor { position: absolute; left: 0; top: 0; bottom: 0; margin: auto 0; }
+        .pop__action--cancel { height: 80px; width: 80px; margin: 0 auto 0 0 !important; flex-direction: column; background-color: @cBg;
+            > * { color: @cG3 !important; }
+            i, svg { line-height: 18px; }
+            span { white-space: nowrap; font-size: @fM; }}
+        .pop__action--waiting { background-color: transparent;
+            * { color: @c1 !important; }
+            span { line-height: 120%; }
+            .loading--sm { min-width: 50px; min-height: 50px; max-width: 50px; max-height: 50px; border: 5px solid @c1; border-top: 5px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }}
     }
     .pop__pane { width: 100%; padding-top: 85px; }
     .pop__action--cash { 

@@ -523,12 +523,17 @@
                 <!-- 一開啟結帳pop的畫面 -->
                 <div class="pop__pane pop__action--none">
                     <div class="pop__actions">
-                        <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <button class="pop__action pop__action--cancel" onclick="popClose(this)">
                             <i class="fa-solid fa-xmark fa-xl"></i>
+                            <span>取消訂單</span>
                         </button>
                         <button class="pop__action" onclick="popClose(this);popCheckoutFinished();">
                             <span>確認收款</span>
                             <i class="fa-regular fa-circle-check fa-xl"></i>
+                        </button>
+                        <button class="pop__action pop__action--waiting">
+                            <span>收款中<br>請稍候</span>
+                            <div class="loading--sm"></div>
                         </button>
                     </div>
                 </div>
