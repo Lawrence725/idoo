@@ -15,6 +15,7 @@
         <link href="./css/cart.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/pop-more.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/pop-order.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/pop-discount.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/fontawesome-free-6.3.0-web/css/all.css" rel="stylesheet"> <!-- Awesome Icon -->
     </head>
     <body class="orders">
@@ -342,8 +343,8 @@
                     <span class="totals__name">小計</span>
                     <span class="totals__price">$1998</span>
                 </div>
-                <a class="adjust" onclick="">
-                    <span class="totals__name">訂單調帳</span>
+                <a class="adjust" onclick="popAdjust()">
+                    <span class="totals__name">調帳</span>
                     <div class="totals__action"><i class="fa-solid fa-plus-minus"></i></div>
                     <span class="totals__price">$10</span>
                 </a>
@@ -376,22 +377,26 @@
                 </div>
             </div>
             <div class="actions">
-                <button class="order--cash">
-                    <i class="fa-solid fa-money-bill-wave fa-xl"></i>
-                    <span>改為現金結帳</span>
-                </button>
-                <button class="order--code">
-                    <i class="fa-solid fa-qrcode fa-xl"></i>
-                    <span>顯示/列印付款碼</span>
-                </button>
-                <button class="order--cancel">
+                <button class="order--cancel" onclick="popOrderCancelConfirm()">
                     <i class="fa-regular fa-circle-xmark fa-xl"></i>
                     <span>取消訂單</span>
                 </button>
-                <button class="order--print">
+                <button class="order--print" onclick="popOrderPrint()">
                     <i class="fa-solid fa-receipt fa-xl"></i>
                     <span>重印訂單</span>
                 </button>
+                <button class="payment--checkout">
+                    <i class="fa-solid fa-cash-register fa-lg"></i>
+                    <span>結帳</span>
+                </button>
+                <!-- <button class="order--cash">
+                    <i class="fa-solid fa-money-bill-wave fa-xl"></i>
+                    <span>改為現金結帳</span>
+                </button>
+               <button class="order--code">
+                    <i class="fa-solid fa-qrcode fa-xl"></i>
+                    <span>顯示/列印付款碼</span>
+                </button> -->
             </div>
         </section>
 
@@ -477,6 +482,127 @@
 
                 <span class="pop__title">發票補印成功</span>
                 <span class="pop__content">發票 NB-12345678</span>
+
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 調帳popup -->
+        <section id="pop__adjust" class="pop pop--center pop__discount" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">調帳</span>
+                <div class="discount__tabs adjust">
+                    <a class="active" onclick=""><i class="fa-solid fa-plus fa-lg"></i></a>
+                    <a onclick=""><i class="fa-solid fa-minus fa-lg"></i></a>
+                </div>
+
+                <!-- 未輸入數字時顯示 -->
+                <div class="discount__result">
+                    <input class="discount__input" type="text" placeholder="輸入+金額" value="" disabled>
+                </div>
+                
+                <div class="discount__numbers">
+                    <a>7</a><a>8</a><a>9</a>
+                    <a>4</a><a>5</a><a>6</a>
+                    <a>1</a><a>2</a><a>3</a>
+                    <a class="discount__number--none"></a>
+                    <a>0</a>
+                    <a class="discount__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                </div>
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popAdjustResult()">
+                        <span>確認調帳</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 調帳成功popup -->
+        <section id="pop__adjust--result" class="pop pop--center pop__adjust--result" onclick="popClose(this)">
+            <div class="pop__body">
+                <div class="pop__icons">
+                    <div class="pop__icon pop__icon--green">
+                        <i class="fa-solid fa-check fa-2xl"></i>
+                    </div>
+                </div>
+
+                <span class="pop__title">調帳成功</span>
+                <span class="pop__content">+$100</span>
+
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 重印訂單popup -->
+        <section id="pop__order--print" class="pop pop--center pop__order--print" onclick="popClose(this)">
+            <div class="pop__body">
+                <div class="pop__icons">
+                    <div class="pop__icon pop__icon--green">
+                        <i class="fa-solid fa-check fa-2xl"></i>
+                    </div>
+                </div>
+
+                <span class="pop__title">已重印訂單</span>
+                <span class="pop__content">訂單 0046097831</span>
+
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 取消訂單確認popup -->
+        <section id="pop__order-cancel--confirm" class="pop pop--center pop__order-cancel--confirm" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">確定取消訂單？</span>
+                <span class="pop__content">訂單 0046097831</span>
+                
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action br" onclick="popOrderCancelled()">
+                        <span>確定取消</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 訂單已取消popup -->
+        <section id="pop__order-cancelled" class="pop pop--center pop__order-cancelled" onclick="popClose(this)">
+            <div class="pop__body">
+                <div class="pop__icons">
+                    <div class="pop__icon pop__icon--green">
+                        <i class="fa-solid fa-check fa-2xl"></i>
+                    </div>
+                </div>
+
+                <span class="pop__title">訂單已取消</span>
+                <span class="pop__content">訂單 0046097831</span>
 
                 <div class="pop__actions">
                     <button class="pop__action pop__action--minor" onclick="popClose(this)">

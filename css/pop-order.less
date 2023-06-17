@@ -31,9 +31,16 @@
         }
     }
 }
-.pop__receipt--resend, .pop__receipt--print {
+.pop__receipt--resend, .pop__receipt--print, 
+.pop__adjust--result, .pop__order--print, .pop__order-cancelled {
     .pop__body { width: 500px; overflow: inherit !important;
         .pop__title { color: @cG1 !important; font-size: @fXXXL !important; font-weight: 600 !important; }
         .pop__content { font-size: @fXXL !important; }
+    }
+}
+.pop__order-cancel--confirm { 
+    .pop__body { width: 500px;
+        .pop__title { color: @cG1 !important; font-size: @fXXL !important; font-weight: 600 !important; }
+        .pop__action.br { color: #FFFFFF; background-color: @cRed !important; }
     }
 }
