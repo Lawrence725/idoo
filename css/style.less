@@ -90,7 +90,7 @@ iframe                                      { border: 0; }
 
 /******************************
 3. Components */
-body { width: 100vw; height: 100vh; display: flex; align-items: center; }
+body { width: 100vw; height: 100dvh; display: flex; align-items: center; }
 .disabled   { color: @cG4 !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
     *       { color: @cG4 !important; }
     img     { filter: grayscale(100%); opacity: 0.5; }}
@@ -116,7 +116,7 @@ body { width: 100vw; height: 100vh; display: flex; align-items: center; }
 button { width: fit-content; height: 60px; padding: 0 20px; border-radius: 30px; gap: 10px; display: flex; align-items: center; justify-content: center; background-color: @c1;
     * { color: white !important; }
     span { font-size: @fXL; }}
-.header { width: 100px; height: 100vh; padding: 10px; display: flex; flex-direction: column; justify-content: space-between; background-color: @c1;
+.header { width: 100px; height: 100dvh; padding: 10px; display: flex; flex-direction: column; justify-content: space-between; background-color: @c1;
     .header__top, .header__bottom { width: 100%; gap: 10px; display: flex; flex-direction: column; align-items: center; }
     .header__item { width: 100%; padding: 3px; border-radius: 20px; gap: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center;
         > *, > * > * { color: rgba(255, 255, 255, 0.5); }
@@ -132,7 +132,7 @@ button { width: fit-content; height: 60px; padding: 0 20px; border-radius: 30px;
         > * { line-height: 100%; color: white; }
         .header__clock-week, .header__clock-time { font-size: @fL; }
         .header__clock-date { font-size: @fXL; }}}
-.footer { min-width: 280px; height: 100%; gap: 5px; display: flex; flex-direction: column;
+.footer { width: 30%; height: 100%; gap: 5px; display: flex; flex-direction: column;
     .cart, .totals, .inputs { width: 100%; display: flex; flex-direction: column;align-items: center; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2); }
     .cart { height: 100%; padding: 0 10px 10px; gap: 10px; overflow-y: auto; z-index: 0;
         .cart-top { padding: 10px 0; margin-bottom: -10px; top: 0; position: sticky; background-color: rgba(white, 0.95); z-index: 2; }
@@ -148,7 +148,7 @@ button { width: fit-content; height: 60px; padding: 0 20px; border-radius: 30px;
                     border-right: 15px solid @cBg; border-top: 15px solid transparent; border-bottom: 15px solid transparent; }
                 div { min-width: 8px; height: 8px; border-radius: 99px; left: -6px; position: absolute; background-color: white; }
                 span { font-size: @fM; color: @cG4; }}}}
-    .totals { height: fit-content; padding: 5px 10px; margin-bottom: 20px; gap: 5px; position: relative; z-index: 2;
+    .totals { height: fit-content; padding: 5px 10px; margin-bottom: 20px; gap: 5px; position: relative; z-index: 1;
         .subtotal, .cart-addon, .discount, .total, .adjust { width: 100%; gap: 5px; display: flex; align-items: center; }
         .totals__name { font-size: @fL; white-space: nowrap; }
         .totals__price { margin-left: auto; font-size: @fL; font-weight: bold; text-align: right; white-space: nowrap; }
@@ -160,7 +160,7 @@ button { width: fit-content; height: 60px; padding: 0 20px; border-radius: 30px;
             .totals__action { background-color: rgba(@cRed, 0.2);
                 i, svg { color: @cRed; }}}
         .adjust { .totals__name, .totals__price { color: @c1; }}}
-    .inputs { height: fit-content; padding: 5px 10px; margin-bottom: 20px; gap: 5px; position: relative; z-index: 1;
+    .inputs { height: fit-content; padding: 5px 10px; margin-bottom: 20px; gap: 5px; position: relative; z-index: 2;
         .remark, .invoice, .carrier, .receipt { width: 100%; gap: 5px; display: flex; align-items: center; z-index: 2; }
         .inputs__name { font-size: @fL; white-space: nowrap; color: @cG3; }
         .inputs__content { max-width: 50%; margin-left: auto; padding: 0 5px; border-bottom: 1px solid @cG5; border-radius: 0; font-size: @fL; text-align: right; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }

@@ -3,15 +3,15 @@
     .header__eatin { background-color: @c2 !important;
         > *, > * > * { color: @c1 !important; }
         .header__item-action { display: flex !important; }}
-    .categories { min-width: 165px; height: 100%; padding-right: 15px; border-right: 1px dashed @cG4; gap: 10px; display: flex; flex-direction: column; overflow-y: auto;
+    .categories { width: 15%; height: 100%; padding-right: 10px; border-right: 1px dashed @cG4; gap: 10px; display: flex; flex-direction: column; overflow-y: auto;
         .categories__title { width: 100%; padding-bottom: 10px; margin-bottom: -10px; top: 0; position: sticky; text-align: center; font-size: @fL; font-weight: bold; color: @c1; background-color: rgba(@cBg, 0.95); z-index: 2; }
-        .category { width: 125px; min-height: 50px; max-height: 50px; padding: 0 10px; border-radius: 10px 0 0 10px; display: flex; align-items: center;
+        .category { width: calc(100% - 25px); min-height: 50px; max-height: 50px; padding: 0 0 0 10px; border-radius: 10px 0 0 10px; display: flex; align-items: center;
             .category__name { font-size: @fL; color: @cG3; line-height: 120%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
             &.category--active { margin-right: 0px; position: relative; background: @c2;
                 &:before { content: ""; width: 0; height: 0; top: 0; right: -25px; position: absolute;
                     border-left: 25px solid @c2; border-top: 25px solid transparent; border-bottom: 25px solid transparent; }
                 span { color: @c1; }}}}
-    .main { width: 100%; height: 100vh; position: relative; display: flex; flex-direction: column;
+    .main { width: 55%; height: 100dvh; position: relative; display: flex; flex-direction: column;
         .main__title { width: 100%; padding: 15px 0 10px; top: 0; position: absolute; text-align: center; font-size: @fL; font-weight: bold; background-color: rgba(@cBg, 0.95); color: @c1; z-index: 2; }
         .items { padding: 54px 0 15px; margin-bottom: auto; gap: 10px; display: flex; flex-wrap: wrap; overflow-y: auto;
             .item { width: calc(33.33% - 6.67px); height: 120px; padding: 7.5px 15px; border-radius: 15px; display: flex; flex-direction: column; justify-content: space-between; background-color: white;
@@ -19,10 +19,10 @@
                 .item__name { font-size: @fXL; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
                 .item__price { font-size: @fXL; font-weight: bold; color: @c1; }}}
         .addons { padding-top: 15px; min-height: 245px; max-height: 245px; padding-bottom: 15px; border-top: 1px solid @cG4; gap: 10px; display: flex; flex-wrap: wrap; overflow-y: auto;
-            .addon { width: calc(20% - 8px); height: 90px; padding: 5px 10px; border-radius: 5px 15px 15px 5px; position: relative; display: flex; flex-direction: column; justify-content: space-between; background-color: white;
+            .addon { width: calc(20% - 8px); height: 90px; padding: 5px 7.5px; border-radius: 5px 15px 15px 5px; position: relative; display: flex; flex-direction: column; justify-content: space-between; background-color: white;
                 &.addon--active { border: 1.5px solid @c1; background-color: @c2; }
                 .addon__name { font-size: @fL; line-height: 120%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-                .addon__price { font-size: @fL; font-weight: bold; color: @c1; }
+                .addon__price { font-size: @fM; font-weight: bold; color: @c1; }
                 .addon__tag { min-width: 35px; height: 30px; padding: 0 5px; border-radius: 15px 0 15px 0; right: 0; bottom: 0; position: absolute; display: flex; align-items: center; justify-content: center; font-size: @fS; color: @cP1; background-color: @cP1s; }
                 &.addon--group2 .addon__tag { color: @cP2; background-color: @cP2s;  }
                 &.addon--group3 .addon__tag { color: @cP3; background-color: @cP3s;  }
