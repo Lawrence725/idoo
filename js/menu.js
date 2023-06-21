@@ -38,4 +38,43 @@ $(function(){
     $('.pop__fullscreen__close').click(function(){
         $(this).closest('.pop__fullscreen').slideUp(300);
     });
+
+    //開頭教學1
+    $('.menu .main .addons').addClass('start-step');
+    $('.start-step1').show();
+    $('.start-step1 .start-step__btn.next').click(function(){
+        $(this).hide();
+        $('.menu .main .addons').removeClass('start-step');
+        $('.footer .cart').addClass('start-step');
+        $('.start-step1, .start-step2').slideToggle(500);
+    });
+
+    //開頭教學2
+    $('.start-step2 .start-step__btn.prev').click(function(){
+        $(this).hide();
+        $('.start-step1 .start-step__btn.next, .start-step2 .start-step__btn.prev').show();
+        $('.footer .cart').removeClass('start-step');
+        $('.menu .main .addons').addClass('start-step');
+        $('.start-step1, .start-step2').slideToggle(500);
+    });
+    $('.start-step2 .start-step__btn.next').click(function(){
+        $(this).hide();
+        $('.footer .cart').removeClass('start-step');
+        $('.footer .totals').addClass('start-step');
+        $('.start-step2, .start-step3').slideToggle(500);
+    });
+
+    //開頭教學3
+    $('.start-step3 .start-step__btn.prev').click(function(){
+        $(this).hide();
+        $('.start-step2 .start-step__btn.next, .start-step3 .start-step__btn.prev').show();
+        $('.footer .totals').removeClass('start-step');
+        $('.footer .cart').addClass('start-step');
+        $('.start-step2, .start-step3').slideToggle(500);
+    });
+    $('.start-step3 .start-step__btn.next').click(function(){
+        $('.start-step-fixed').hide();
+        $('.start-step').removeClass('start-step');
+    });
 });
+

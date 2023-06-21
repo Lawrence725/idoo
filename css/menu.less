@@ -29,3 +29,42 @@
                 &.addon--group4 .addon__tag { color: @cP4; background-color: @cP4s;  }
                 &.addon--group5 .addon__tag { color: @cP5; background-color: @cP5s;  }
                 &.addon--group6 .addon__tag { color: @cP6; background-color: @cP6s;  }}}}}
+
+.menu .main .addons.start-step, 
+.footer .cart.start-step,
+.footer .totals.start-step { position: relative; overflow: hidden; z-index: 10; 
+    .cart-top { background: none; pointer-events: none; }
+    > *:not(.cart-top) { padding: 0 10px; background: #FFFFFF; border-radius: 10px; }
+    .deco__receipt { display: none; }
+}
+.menu .main .addons.start-step::before,
+.footer .cart.start-step::before,
+.footer .totals.start-step::before { content: ''; display: block; position: fixed; width: 100%; height: 100%; left: 0; top: 0; background: rgba(0,0,0,0.75); z-index: -1; }
+.menu .main .addons.start-step::after,
+.footer .cart.start-step::after,
+.footer .totals.start-step::after { content: ''; display: block; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: rgba(255,255,255,0); }
+.start-step-fixed { display: none; position: fixed; z-index: 11; 
+    display: flex; flex-flow: nowrap; align-items: center;
+    .start-step__order { display: flex; flex-flow: nowrap; justify-content: center; align-items: center; 
+        width: 45px; height: 45px; color: #FFFFFF;
+        border-radius: 99em; border: 2px solid @cP7s;
+    }
+    .start-step__caption { margin-left: 10px;
+        > h2 { color: #FFFFFF; font-size: @fXL; font-weight: 600; }
+        > p { color: #FFFFFF; }
+    }
+    .start-step__btn { position: fixed; bottom: 20px; cursor: pointer; 
+        > span { color: #FFFFFF; font-size: @fXL; }
+    }
+    .start-step__btn.prev { left: 20px; z-index: 1; 
+        width: 150px; height: 50px;
+        display: flex; flex-flow: nowrap; justify-content: flex-start; align-items: flex-end;
+    }
+    .start-step__btn.next { right: 20px; z-index: 0; 
+        width: 100%; height: 100%; 
+        display: flex; flex-flow: nowrap; justify-content: flex-end; align-items: flex-end;
+    }
+}
+.start-step1 { left: 25dvw; bottom: 260px; }
+.start-step2 { right: 30dvw; top: 30dvh; }
+.start-step3 { right: 30dvw; bottom: 15dvh; }
