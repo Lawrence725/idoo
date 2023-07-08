@@ -33,8 +33,8 @@ function popDqr() {
     $('#pop__dqr').slideDown(300);
 }
 
-// 關閉滿版popup
 $(function(){
+    // 關閉滿版popup
     $('.pop__fullscreen__close').click(function(){
         $(this).closest('.pop__fullscreen').slideUp(300);
     });

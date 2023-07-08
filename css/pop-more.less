@@ -4,7 +4,10 @@
         .more__action { width: 80px; height: 80px; border-radius: 18.5px; gap: 2px; display: flex; flex-direction: column; align-items: center; justify-content: center;
             &.more__action--minor > * { opacity: 0.5; }
             i, svg { color: white; line-height: normal; }
-            span { color: white; font-size: @fL; }}
+            span { color: white; font-size: @fL; }
+            .icon-cashier { display: inline-block; width: 27px; height: 28px; background: url('../img/icon/cashier.svg') no-repeat center; background-size: contain; }
+            .icon-cashier + span { margin-top: -5px; }
+        }
         .more__gap { width: 2px; height: 30px; border-radius: 99px; background-color: rgba(white, 0.2); }
     }}
 
@@ -15,3 +18,108 @@
     .pop__title { font-size: @fXXL !important; font-weight: normal !important; color: @cG1 !important; }
     .pop__content { font-size: @fXL !important; }
     .pop__action:not(.pop__action--minor) { background-color: @cRed; }}
+
+.pop__makecollections {
+    .pop__body { max-width: 800px !important; }
+    .pop__content { display: flex; flex-flow: nowrap; justify-content: space-between; width: 100%; padding: 50px 0 20px 0;
+        .mc-method { width: 33.3%; padding: 0 30px; 
+            background: url('../img/dashed.svg') repeat-y right center; text-align: center;
+
+            input[type=radio] { display: none; }
+            input[type=radio] + label { display: block; 
+                .mc-method__title { position: relative; display: flex; flex-flow: nowrap; justify-content: center; align-items: center; font-size: @fM; font-weight: bold;
+                    .icon-border { display: inline-block; width: 20px; height: 20px; margin-right: 10px; border-radius: 99em; border: 3px solid @cG4; }
+                    .icon-checked { display: none; width: 20px; height: 20px; margin-right: 10px; color: #FFFFFF; background: @c1; border-radius: 99em; }
+                    .tooltip { position: absolute; left: 88%; top: -30px; padding: 5px 10px; color: #FFFFFF; font-size: @fS; font-weight: normal; white-space: nowrap; background: @c1; border-radius: 99em; }
+                    .tooltip::before { content: ''; display: block; position: absolute;
+                        width: 0; height: 0; left: 0; bottom: 0;
+                        border-style: solid;
+                        border-width: 0 0 10px 10px;
+                        border-color: transparent transparent @c1 transparent;
+                        -moz-transform:rotate(-10deg);
+                        -webkit-transform:rotate(-10deg);
+                        -o-transform:rotate(-10deg);
+                        -ms-transform:rotate(-10deg);
+                        transform:rotate(-10deg);
+                    }
+                }     
+            }
+
+            input[type=radio]:not(:checked) + label.mc-method_label {
+                filter: grayscale(1);
+                -webkit-filter: grayscale(1);
+                opacity: 0.5;
+            }
+
+            input[type=radio]:checked + label, input[type=radio]:checked + label.mc-method_label { 
+                filter: grayscale(0);
+                -webkit-filter: grayscale(0);
+                opacity: 1;
+
+                .mc-method__title {
+                    .icon-border { display: none; }
+                    .icon-checked { display: inline-flex; justify-content: center; align-items: center; }
+                }
+            }
+            
+            .mc-method__img { margin: 20px auto;
+                > img { width: 100%; height: auto; }
+            }
+            .mc-method__desc { color: @cG1; font-size: @fM; font-weight: 500;
+                .fs { font-size: @fS; color: @cG3; font-weight: normal; }
+            }
+        }
+        .mc-method:last-child { background: none; }
+    }
+    .pop__action.readonly { background: @cG4; cursor: text; }
+
+    .pop__content.flex--center { align-items: center;
+        .mc-setting { width: 60%; padding: 0 40px; 
+            background: url('../img/dashed.svg') repeat-y right center; 
+            > div { font-size: @fL; color: @cG3; font-weight: 500; }
+            > h2 { margin-bottom: 10px; font-size: @fXL; font-weight: 600; }
+
+            .mc-setting__box { display: flex; flex-flow: nowrap; align-items: center;
+                padding: 15px; margin-top: 50px; background: @cBg; border-radius: 10px;
+                .mc-setting__switch { width: 36px; margin-right: 15px;
+                    input[type=checkbox] { display: none; }
+                    input[type=checkbox] + label { display: block; position: relative; width: 36px; height: 21px; background: @cG4; border: 2px solid @cG4; border-radius: 99em; 
+                        .switch__inner { display: block;
+                            width: 200%; margin-left: -100%;
+                            transition: margin 0.3s ease-in 0s;
+                        }
+                        .switch__switch { display: block; position: absolute;
+                            width: 16px; height: 16px; margin: auto; top: 0; bottom: 0; right: 16px;
+                            background: #FFFFFF; border-radius: 99em; transition: all 0.3s ease-in 0s;
+                        }
+                    }
+
+                    input[type=checkbox]:checked + label {
+                        background: @c1; border-color: @c1;
+                        .switch__inner { margin-left: 0; }
+                        .switch__switch { right: 0px; }
+                    }
+                }
+                .mc-setting__caption { width: calc(100% - 51px); 
+                    > div { font-size: @fL; font-weight: 600; }
+                    .fs { font-size: @fM; font-weight: normal; color: @cG3; }
+                    .mc-setting__pincode { margin-top: 5px;
+                        > span { color: @c1; font-weight: bold; font-size: @fL; }
+                        > a { display: inline-block; margin-left: 5px; color: @cG4; font-weight: bold; 
+                            > i { font-size: @fL; }
+                        }
+                    }
+                }
+            }   
+        }
+        .mc-setting:last-child { background: none; }
+        .mc-setting.qrcode { width: 40%; 
+            .mc-setting__qrcode > img { width: 100%; height: auto; }
+            .mc-setting__qrcode__url { display: flex; flex-flow: nowrap; justify-content: center; align-items: center; margin-top: 20px;
+                > span { margin-right: 10px; font-size: @fXL; line-height: @fXL; font-weight: bold; }
+                > a { color: @c1; }
+            }
+        }
+        .mc-setting:last-child { background: none; }
+    }
+}

@@ -93,6 +93,10 @@
             <i class="fa-solid fa-globe fa-xl"></i>
             <span>語言</span>
         </a>
+        <a class="more__action" onclick="popMakeCollections()">
+            <i class="icon-cashier"></i>
+            <span>收款模式</span>
+        </a>
         <a class="more__action" onclick="popLogout()">
             <i class="fa-solid fa-id-card-clip fa-xl"></i>
             <span>陳店員</span>
@@ -138,6 +142,122 @@
             </button>
             <button class="pop__action" onclick="window.location.href='index.html'">
                 <span>Confirm</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 收款模式popup -->
+<section id="pop__makecollections" class="pop pop--center pop__makecollections" onclick="popClose(this)">
+    <div class="pop__body">
+        <span class="pop__title">選擇收款模式</span>
+        <div class="pop__content">
+            <div class="mc-method">
+                <input type="radio" name="mc-method" id="mc-method1">
+                <label for="mc-method1">
+                    <div class="mc-method__title">
+                        <i class="icon-border"></i>
+                        <i class="icon-checked fa-solid fa-check"></i>
+                        單螢幕 掃碼付款
+                        <div class="tooltip">推薦使用！</div>
+                    </div>
+                    <div class="mc-method__img"><img src="img/makecollections1.png"></div>
+                    <div class="mc-method__desc">一個螢幕<br>
+                        點餐 + 收款碼</div>
+                </label>
+            </div>
+
+            <div class="mc-method">
+                <input type="radio" name="mc-method" id="mc-method2">
+                <label for="mc-method2">
+                    <div class="mc-method__title">
+                        <i class="icon-border"></i>
+                        <i class="icon-checked fa-solid fa-check"></i>
+                        雙螢幕 掃碼付款
+                        <div class="tooltip">雙螢幕 更方便！</div>
+                    </div>
+                    <div class="mc-method__img"><img src="img/makecollections2.png"></div>
+                    <div class="mc-method__desc">兩個螢幕<br>
+                        一個點餐 + 一個收款碼<br>
+                        <span class="fs">請準備第二台平板/手機進行設定</span></div>
+                </label>
+            </div>
+
+            <div class="mc-method">
+                <input type="radio" name="mc-method" id="mc-method3">
+                <label for="mc-method3">
+                    <div class="mc-method__title">
+                        <i class="icon-border"></i>
+                        <i class="icon-checked fa-solid fa-check"></i>
+                        關閉 掃碼付款
+                    </div>
+                    <div class="mc-method__img"><img src="img/makecollections3.png"></div>
+                    <div class="mc-method__desc">一個螢幕<br>
+                        點餐 + 線下收款<br>
+                        <span class="fs">原iDoo 1.0 收款模式</span></div>
+                </label>
+            </div>
+        </div>
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action readonly">
+                <span>確認</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="popClose(this);popTwoScreenSetting()">
+                <span>確認</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 收款模式popup2 -->
+<section id="pop_twoscreensetting" class="pop pop--center pop__makecollections" onclick="popClose(this)">
+    <div class="pop__body">
+        <span class="pop__title">雙螢幕設定</span>
+        <div class="pop__content flex--center">
+            <div class="mc-setting qrcode">
+                <div class="mc-setting__qrcode"><img src="img/qrcode.jpg"></div>
+                <div class="mc-setting__qrcode__url">
+                    <span>www.dqr.com</span>
+                    <a><i class="fa-solid fa-copy fa-xl"></i></a>
+                </div>
+            </div>
+
+            <div class="mc-setting">
+                <h2>請使用第二台平板或手機<br>
+                    掃描左方QR code完成收款設定</h2>
+                <div>或手動輸入左方連結</div>
+                
+                <div class="mc-setting__box">
+                    <div class="mc-setting__switch">
+                        <input type="checkbox" name="switch"  id="switch" checked>
+                        <label for="switch">
+                            <span class="switch__inner"></span>
+                            <span class="switch__switch"></span>
+                        </label>
+                    </div>
+                    <div class="mc-setting__caption">
+                        <div>開啟安全認證PIN碼？</div>
+                        <div class="fs">開啟後每次登入以上連結將需要重新認證</div>
+                        <div class="mc-setting__pincode">
+                            <span>PIN碼：ASDF</span>
+                            <a><i class="fa-solid fa-arrows-rotate"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="popClose(this)">
+                <span>確認</span>
                 <i class="fa-solid fa-arrow-right fa-xl"></i>
             </button>
         </div>

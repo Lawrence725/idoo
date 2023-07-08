@@ -35,6 +35,18 @@ function popLogout() { document.getElementById("pop__logout").style.display = "f
 // 選擇語言popup
 function popLanguage() { document.getElementById("pop__language").style.display = "flex";}
 
+// 收款模式popup
+function popMakeCollections() { document.getElementById("pop__makecollections").style.display = "flex";}
+$(function(){
+    //收款模式checked樣式改變
+    $('.mc-method input').change(function(){
+        $('.mc-method label').addClass('mc-method_label');
+    });
+});
+
+// 收款模式popup2
+function popTwoScreenSetting() { document.getElementById("pop_twoscreensetting").style.display = "flex";}
+
 // 更多選單popup close
 function popMoreClose(e) {
     if (e.classList.contains('pop'))
