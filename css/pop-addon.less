@@ -3,6 +3,10 @@
     .pop__body { max-width: 800px !important;
         .addon__item { width: 100%; gap: 10px; display: flex; flex-direction: column; align-items: center;
             .addon__item-name { font-size: @fXL; }
+            .addon__item-count { margin-top: -5px; gap: 10px; display: flex; align-items: center;
+                a { width: 34px; height: 34px; padding-bottom: 2px; border-radius: 0; display: flex; align-items: center; justify-content: center; font-size: @fXL;
+                    &:nth-child(2) { border-bottom: 1px solid @cG4; }
+                    i, svg { color: @c1; }}}
             .addon__item-choices { width: 100%; gap: 20px; display: flex; flex-wrap: wrap; justify-content: center;
                 a { height: 50px; padding: 0 20px; border: 1px solid @cG5; border-radius: 99px; display: flex; align-items: center; font-size: @fL;
                     &.active { border: none; background-color: @c2; color: @c1; }}}}}}
