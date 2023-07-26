@@ -171,8 +171,10 @@ button { width: fit-content; height: 60px; padding: 0 20px; border-radius: 30px;
     .cart { height: 100%; padding: 0 10px 10px; gap: 10px; overflow-y: auto; z-index: 0;
         .cart-top { padding: 10px 0; margin-bottom: -10px; top: 0; position: sticky; background-color: rgba(white, 0.95); z-index: 2; }
         .cart-item { position: relative;
-            &:not(:nth-child(2)) { padding-top: 10px; border-top: 1px dashed @cG5; }
+            &:not(:nth-child(2)) { padding-top: 5px; border-top: 1px dashed @cG5; }
             &:nth-child(2) { padding-top: 0; border-top: none; }
+            .cart-item__bg { width: calc(100% + 10px); height: 100%; border-radius: 7.5px; top: 5px; left: -5px; position: absolute; background-color: @c2; z-index: -1; }
+            .cart-item__count a { border: 1.5px solid white; }
             .cart-item__total { width: 30px; height: 30px; min-width: 30px; border: 1.5px solid @c2; border-radius: 5px; display: flex; align-items: center; justify-content: center; color: @c1; font-size: @fL; }
             .cart-item__remark { width: 50px; height: 30px; border-radius: 0 5px 5px 0; right: 0; bottom: 0; position: absolute; display: flex; align-items: center; justify-content: center; background-color: @cBg;
                 &:hover { box-shadow: none; }
