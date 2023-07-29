@@ -1,3 +1,6 @@
+// 選擇數量popup
+function popItemQuantity() { document.getElementById("pop__quantity").style.display = "flex";}
+
 // 商品備註popup
 function popItemRemark() { document.getElementById("pop__item-remark").style.display = "flex";}
 
