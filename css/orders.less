@@ -37,6 +37,9 @@
                 .order__price { font-size: @fM; font-weight: bold; color: @c1; }}
             .order__state { gap: 5px; justify-content: flex-end;
                 span { font-size: @fS; overflow-wrap: anywhere; text-align: right; }
+                &.order__state--done {
+                    span { color: @cGreen; }
+                    i, svg { color: @cGreen; }}
                 &.order__state--error {
                     span { color: @cRed; }
                     i, svg { color: @cRed; }}
