@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-TW" translate="no">
+    <head>
+        <title>iDoo 愛收銀</title>
+        <link rel="icon" type="image/svg" href="./img/icon/favicon.svg"/> 
+        <meta charset="UTF-8">
+        <meta name="keywords" content="iDoo 愛收銀">
+        <meta name="description" content="iDoo 愛收銀">
+        <meta name="author" content="DotDot">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="google" content="notranslate">
+        <!-- CSS -->
+        <link href="./css/cashier.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/fontawesome-free-6.3.0-web/css/all.css" rel="stylesheet"> <!-- Awesome Icon -->
+    </head>
+    <body class="cashier">
+        <section class="top">
+            <div class="top__bg"></div>
+            <div class="top__left">
+                <a><i class="fa-solid fa-house fa-lg"></i></a>
+            </div>
+            <span class="top__title">iDoo收銀</span>
+            <div class="top__right">
+                <a><i class="fa-solid fa-clipboard-list fa-xl"></i></a>
+            </div>
+        </section>
+        <input class="cashier__input" type="text" placeholder="輸入消費金額" value="" disabled>
+        <div class="cashier__numbers">
+            <a>7</a><a>8</a><a>9</a><a class="cashier__number--sign">+</a>
+            <a>4</a><a>5</a><a>6</a><a class="cashier__number--sign">-</a>
+            <a>1</a><a>2</a><a>3</a><a class="cashier__number--sign">x</a>
+            <a>.</a><a>0</a>
+            <a class="cashier__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+            <a class="cashier__number--sign">÷</a>
+        </div>
+        <section class="bottom">
+            <button>
+                <span>下一步</span>
+                <i class="fa-solid fa-chevron-right fa-xl"></i>
+            </button>
+        </section>
+        <!-- Script -->
+        <script src="./js/less.js" ></script> <!-- Less -->
+    </body>
+</html>
