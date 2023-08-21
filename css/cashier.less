@@ -1,18 +1,20 @@
 @import "./style.less";
+// Cashier Global
+.top { width: 100%; max-width: 400px; padding: 20px 20px 30px; top: 0; position: fixed; display: flex; align-items: center; justify-content: center;
+    .top__left, .top__right { width: 100%; display: flex;
+        a { display: flex; }
+        i, svg { color: white; }}
+    .top__right { justify-content: flex-end; }
+    .top__title { white-space: nowrap; color: white; font-size: @fL; font-weight: bold; }
+    .top__bg { bottom: 0; width: 1500px; height: 1500px; border-radius: 999px; position: absolute; background-color: @c1; z-index: -1; }}
+.bottom { width: 100%; max-width: 400px; padding: 20px; bottom: 0; position: fixed;
+    button { width: 100%; }}
+
+// Local
 .cashier { padding: 130px 20px; display: flex; align-items: center; flex-direction: column; gap: 50px;
-    .top { width: 100%; max-width: 400px; padding: 20px 20px 30px; top: 0; position: fixed; display: flex; align-items: center; justify-content: center;
-        .top__left, .top__right { width: 100%; display: flex;
-            a { display: flex; }
-            i, svg { color: white; }}
-        .top__right { justify-content: flex-end; }
-        .top__title { white-space: nowrap; color: white; font-size: @fL; font-weight: bold; }
-        .top__bg { bottom: 0; width: 1500px; height: 1500px; border-radius: 999px; position: absolute; background-color: @c1; z-index: -1; }}
     .cashier__input { max-width: 400px; font-size: @fXXL; text-align: center; }
     .cashier__numbers { width: 100%; max-width: 400px; gap: 10px; display: flex; flex-wrap: wrap;
         a { width: calc(25% - 7.5px); height: 80px; padding-bottom: 5px; border-radius: 30px; display: flex; align-items: center; justify-content: center; font-size: @fXXL; background-color: @cBg;
             &.cashier__number--sign { background-color: @c2; color: @c1; }
             &.cashier__number--delete { background-color: transparent;
-                i, svg { color: @cG4; font-size: unset; }}}}
-    .bottom { width: 100%; max-width: 400px; padding: 20px; bottom: 0; position: fixed;
-        button { width: 100%; }}
-}
+                i, svg { color: @cG4; font-size: unset; }}}}}
