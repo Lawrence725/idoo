@@ -13,7 +13,7 @@
                     border-left: 25px solid @c2; border-top: 25px solid transparent; border-bottom: 25px solid transparent; }
                 span { color: @c1; }}}}
     .main { width: 45%; height: 100dvh; position: relative; display: flex; flex-direction: column;
-        .main__title { width: 100%; padding: 15px 0 10px; top: 0; position: absolute; text-align: center; font-size: @fL; font-weight: bold; background-color: rgba(@cBg, 0.95); color: @c1; z-index: 2; }
+        .main__title { width: 100%; padding: 15px 0 0; border-bottom: 10px solid @cBg; top: 0; position: absolute; text-align: center; font-size: @fL; font-weight: bold; background-color: rgba(@cBg, 0.95); color: @c1; z-index: 2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
         .items { padding: 54px 0 15px; margin-bottom: auto; gap: 10px; display: flex; flex-wrap: wrap; overflow-y: auto;
             .item { width: calc(33.33% - 6.67px); height: 120px; padding: 5px 10px; border: 1.5px solid transparent; border-radius: 15px; display: flex; flex-direction: column; justify-content: space-between; background-color: white;
                 &.item--active { border: 1.5px solid @c1; background-color: @c2; }
