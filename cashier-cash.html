@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW" translate="no">
+    <head>
+        <title>iDoo 愛收銀</title>
+        <link rel="icon" type="image/svg" href="./img/icon/favicon.svg"/> 
+        <meta charset="UTF-8">
+        <meta name="keywords" content="iDoo 愛收銀">
+        <meta name="description" content="iDoo 愛收銀">
+        <meta name="author" content="DotDot">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="google" content="notranslate">
+        <!-- CSS -->
+        <link href="./css/cashier-cash.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/fontawesome-free-6.3.0-web/css/all.css" rel="stylesheet"> <!-- Awesome Icon -->
+    </head>
+    <body class="cashier-cash">
+        <section class="top">
+            <div class="top__bg"></div>
+            <div class="top__left">
+                <a href="javascript:history.back()"><i class="fa-solid fa-chevron-left fa-xl"></i></a>
+            </div>
+            <span class="top__title">現金收款</span>
+            <div class="top__right"></div>
+        </section>
+        <div class="cash__details">
+            <div class="cash__detail">
+                <span class="title">訂單總計</span>
+                <span class="content">$5994</span>
+            </div>
+            <div class="cash__detail">
+                <span class="title">會員折抵</span>
+                <span class="content">-$10</span>
+            </div>
+        </div>
+        <div class="cash__main">
+            <span class="title">請現金收款</span>
+            <span class="content">$5984</span>
+        </div>
+        <div class="cash__change"> <!-- 未輸入找零 不用出現以下區款 -->
+            <span class="title">請找零</span>
+            <span class="content">$16</span>
+        </div>
+        <div class="cash_calculate">
+            <div class="calculate__input">
+                <span>計算找零</span>
+                <input type="text" placeholder="輸入實收金額" value="" disabled>
+            </div>
+            <div class="calculate__numbers">
+                <a class="calculate--shortcut">100</a><a class="calculate--shortcut">500</a><a class="calculate--shortcut">1000</a>
+                <a>7</a><a>8</a><a>9</a>
+                <a>4</a><a>5</a><a>6</a>
+                <a>1</a><a>2</a><a>3</a>
+                <a class="calculate--none"></a><a>0</a><a class="calculate--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+            </div>
+        </div>
+        <section class="bottom">
+            <button onclick="window.location.href='cashier-checkout.html'">
+                <span>確認收款</span>
+                <i class="fa-regular fa-circle-check fa-xl"></i>
+            </button>
+        </section>
+        <!-- Script -->
+        <script src="./js/less.js" ></script> <!-- Less -->
+    </body>
+</html>
