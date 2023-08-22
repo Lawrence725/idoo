@@ -1,7 +1,8 @@
 @import "./style.less";
 .login { border: 20px solid @cIdoo; gap: 50px; justify-content: center; background-color: white;
-    .logo { width: 400px; }
-    .form { width: 350px; height: 240px; gap: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    @media @sM { flex-direction: column; }
+    .logo { width: 400px; max-width: 60dvw; }
+    .form { width: 350px; max-width: 60dvw; height: 240px; gap: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;
         .form__input { width: 100%; height: 50px; padding: 0 5px; border-bottom: 1.5px solid @cG5; border-radius: 0; font-size: @fXL; }
         .form__button { margin-top: 20px; background-color: @cIdoo; }}
     .hint { bottom: 30px; position: absolute; color: @cG4; font-size: @fM; }
