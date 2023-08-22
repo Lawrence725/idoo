@@ -1,3 +1,11 @@
+// Load Header
+const xhrCover = new XMLHttpRequest();
+xhrCover.open("GET", "./functions.html", true);
+xhrCover.send();
+xhrCover.onreadystatechange=function(){
+    if(xhrCover.readyState == 4 && xhrCover.status == 200){
+        document.querySelectorAll("#cover")[0].innerHTML = xhrCover.responseText; }};
+
 // 選擇數量popup
 function popItemQuantity() { document.getElementById("pop__quantity").style.display = "flex";}
 
