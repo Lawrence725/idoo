@@ -55,6 +55,7 @@ $(function(){
         $('.mc-method label').addClass('mc-method_label');
     });
     
+    /*
     //開頭教學1
     $('.menu .main .addons').addClass('start-step');
     $('.start-step1').show();
@@ -92,5 +93,6 @@ $(function(){
         $('.start-step-fixed').hide();
         $('.start-step').removeClass('start-step');
     });
+    */
 });
 

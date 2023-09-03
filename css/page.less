@@ -1,0 +1,51 @@
+@import "./style.less";
+
+.page-wrap { width: 100dvw; height: 100dvh; padding: 20px; 
+    background-color: #FFFFFF; border: 20px solid @cIdoo;
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    overflow: auto;
+
+    .back-btn { position: fixed; display: flex; flex-flow: nowrap; justify-content: center; align-items: center; width: 50px; height: 50px; left: 40px; top: 40px; color: #FFFFFF; background: @cIdoo; border-radius: 99em; }
+
+    h1 { margin: 30px auto; color: @cG1; font-size: @fXL; font-weight: bold; text-align: center; } 
+}
+.page-wrap * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/* 隱私權政策和popup */
+.privacy {
+    h2 { margin-bottom: 20px; font-size: @fL; }
+    h3 { margin-bottom: 20px; font-size: @fM; }
+    p { margin-bottom: 20px; }
+    a { color: @cP4; text-decoration: underline; }
+}
+
+.pop__privacy {
+    .pop__body { overflow: visible;
+        .pop__icons .pop__icon--orange { border-color: @cIdoo;
+            i { margin-left: 5px; color: @cIdoo; }
+        }
+        .pop__content { font-size: @fM; text-align: center;
+            .ft { margin-top: 30px; color: @cG1; font-size: @fL; }
+            a { text-decoration: underline !important; }
+        }
+        .pop__actions { gap: 10px;
+            button { width: 100%; }
+            .pop__action:not(.pop__action--minor) { color: #FFFFFF; background: @cIdoo; }
+        }
+    }
+}
+
+/* 聯絡客服 */
+.contact { width: 100%; max-width: 600px; margin: 0 auto;
+    .contact__row { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid @cG5; 
+        .contact__row__l { width: calc(100% - 120px); 
+            > div { font-size: @fL; line-height: 120%; }
+            .ft { margin-bottom: 5px; font-size: @fM; color: @cG3; }
+        }
+        .contact__row__copy { width: 36px; height: 36px; padding: 0; color: #FFFFFF; background: @cG4; border-radius: 99em; }
+        .contact__row__action { width: 50px; height: 50px; padding: 0; color: #FFFFFF; background: @cIdoo; border-radius: 99em; 
+            .icon-line { display: inline-block; width: 36px; height: 36px; background: url('../img/icon/line.svg') no-repeat center; background-size: 75%; }
+        }
+    }
+    .contact__row:last-child { border-bottom: none; }
+}

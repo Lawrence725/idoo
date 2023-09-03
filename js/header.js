@@ -41,6 +41,11 @@ function popMakeCollections() { document.getElementById("pop__makecollections").
 // 收款模式popup2
 function popTwoScreenSetting() { document.getElementById("pop_twoscreensetting").style.display = "flex";}
 
+// 開啟滿版選單popup
+function popFullMenu() { 
+    document.getElementById("cover").style.display = "flex";
+    document.getElementById("cover__functions").style.display = "flex"; }
+
 // 更多選單popup close
 function popMoreClose(e) {
     if (e.classList.contains('pop'))

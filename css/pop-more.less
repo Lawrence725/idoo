@@ -4,12 +4,19 @@
         .more__action { width: 80px; height: 80px; border-radius: 18.5px; gap: 2px; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
             &.more__action--minor > * { opacity: 0.5; }
             i, svg { color: white; line-height: normal; }
-            span { color: white; font-size: @fL; }
+            span { color: white; font-size: @fL; white-space: nowrap; }
             .more__action-dot { width: 20px; height: 20px; border: 3px solid @c1; border-radius: 99px; top: 5px; right: 15px; position: absolute; background-color: @cRed; }
             .icon-cashier { display: inline-block; width: 27px; height: 28px; background: url('../img/icon/cashier.svg') no-repeat center; background-size: contain; }
             .icon-cashier + span { margin-top: -5px; }
+            .icon-contactless { display: inline-block; width: 27px; height: 28px; background: url('../img/icon/contactless-setting.svg') no-repeat center; background-size: contain; }
+            .icon-contactless + span { margin-top: -5px; }
         }
         .more__gap { width: 2px; height: 30px; border-radius: 99px; background-color: rgba(white, 0.2); }
+        .more__action:last-child { width: 120px; 
+            span { display: inline-flex; flex-flow: nowrap; width: 100%; align-items: center; 
+                i { margin-right: 5px; }
+            }
+        }
     }}
 
 @keyframes popright { 0% { margin-left: -100vw; opacity: 0; } 50% { opacity: 1; } 100% { margin-left: 0; opacity: 1; }}

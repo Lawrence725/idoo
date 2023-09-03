@@ -69,14 +69,31 @@
             <i class="fa-solid fa-chevron-left fa-xl"></i>
             <span>收起</span>
         </a>
-        <a class="more__action" href="cashier.html">
-            <i class="fa-solid fa-money-bills fa-xl"></i>
-            <span>收銀</span>
+        <div class="more__gap"></div>
+        <a class="more__action" onclick="popFullMenu()">
+            <i class="fa-solid fa-house fa-xl"></i>
+            <span>選單</span>
         </a>
         <div class="more__gap"></div>
+        <!-- <a class="more__action" href="cashier.html">
+            <i class="fa-solid fa-money-bills fa-xl"></i>
+            <span>收銀</span>
+        </a> -->
+        <a class="more__action">
+            <i class="fa-solid fa-sack-dollar fa-xl"></i>
+            <span>結算</span>
+        </a>
         <a class="more__action" onclick="popMakeCollections()">
             <i class="icon-cashier"></i>
             <span>收款模式</span>
+        </a>
+        <a class="more__action" onclick="popMakeCollections()">
+            <i class="icon-contactless"></i>
+            <span>靠卡設定</span>
+        </a>
+        <a class="more__action">
+            <i class="fa-solid fa-cash-register fa-xl"></i>
+            <span>錢箱</span>
         </a>
         <!-- <a class="more__action">
             <i class="fa-solid fa-address-card fa-xl"></i>
@@ -105,12 +122,16 @@
             <span>商店更新</span>
         </a>
         <a class="more__action" onclick="popLogout()">
+            <i class="fa-solid fa-right-from-bracket fa-xl"></i>
+            <span>登出</span>
+        </a>
+        <!-- <a class="more__action" onclick="popLogout()">
             <i class="fa-solid fa-id-card-clip fa-xl"></i>
             <span>陳店員</span>
-        </a>
+        </a> -->
         <a class="more__action more__action--minor">
-            <span>200mb/s</span>
-            <span>網路速度</span>
+            <span><i class="fa-solid fa-id-card-clip"></i> 陳店長</span>
+            <span><i class="fa-solid fa-wifi"></i> 200mb/s</span>
         </a>
     </div>
 </section>
