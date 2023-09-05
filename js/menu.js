@@ -49,11 +49,6 @@ $(function(){
     $('.pop__fullscreen__close').click(function(){
         $(this).closest('.pop__fullscreen').slideUp(300);
     });
-
-    //收款模式checked樣式改變
-    $('.mc-method input').change(function(){
-        $('.mc-method label').addClass('mc-method_label');
-    });
     
     /*
     //開頭教學1

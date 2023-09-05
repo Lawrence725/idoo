@@ -41,6 +41,12 @@ function popMakeCollections() { document.getElementById("pop__makecollections").
 // 收款模式popup2
 function popTwoScreenSetting() { document.getElementById("pop_twoscreensetting").style.display = "flex";}
 
+// 靠款設定popup
+function popContactless() { document.getElementById("pop__contactless").style.display = "flex";}
+
+// 靠款設定popup2
+function popTwoContactless() { document.getElementById("pop_twocontactless").style.display = "flex";}
+
 // 開啟滿版選單popup
 function popFullMenu() { 
     document.getElementById("cover").style.display = "flex";
@@ -62,3 +68,15 @@ function popMoreClose(e) {
             e.closest('.pop').style.display = "none";
             e.closest('.pop').children[0].style.animationName = "popright";
         }, 500); }}
+
+$(function(){
+    //收款模式checked樣式改變
+    $('.mc-method input').change(function(){
+        $('.mc-method label').addClass('mc-method_label');
+    });
+
+    //靠卡設定checked樣式改變
+    $('.cl-method input').change(function(){
+        $('.cl-method label').addClass('cl-method_label');
+    });
+});

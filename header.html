@@ -87,7 +87,7 @@
             <i class="icon-cashier"></i>
             <span>收款模式</span>
         </a>
-        <a class="more__action" onclick="popMakeCollections()">
+        <a class="more__action" onclick="popContactless()">
             <i class="icon-contactless"></i>
             <span>靠卡設定</span>
         </a>
@@ -281,11 +281,177 @@
             </div>
         </div>
         <div class="pop__actions">
-            <button class="pop__action pop__action--minor" onclick="popClose(this)">
-                <i class="fa-solid fa-xmark fa-xl"></i>
+            <button class="pop__action pop__action--minor" onclick="popClose(this);popMakeCollections()">
+                <i class="fa-solid fa-arrow-left fa-xl"></i>
             </button>
             <button class="pop__action" onclick="popClose(this)">
                 <span>確認</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 靠卡設定popup -->
+<section id="pop__contactless" class="pop pop--center pop__contactless" onclick="popClose(this)">
+    <div class="pop__body">
+        <span class="pop__title">選擇靠卡方式</span>
+        <div class="pop__content">
+            <div class="cl-method">
+                <input type="radio" name="cl-method" id="cl-method1">
+                <label for="cl-method1">
+                    <div class="mc-method__title">
+                        <i class="icon-border"></i>
+                        <i class="icon-checked fa-solid fa-check"></i>
+                        平板靠卡
+                    </div>
+                    <div class="mc-method__img"><img src="img/contactless1.png"></div>
+                    <div class="mc-method__desc">一台裝置<br>
+                        點餐 + 靠卡收款<br>
+                        <span class="fs">請確認此裝置支援靠卡功能</span><br>
+                        <a href="#">查看支援靠卡之平板 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </label>
+            </div>
+
+            <div class="cl-method">
+                <input type="radio" name="cl-method" id="cl-method2">
+                <label for="cl-method2">
+                    <div class="mc-method__title">
+                        <i class="icon-border"></i>
+                        <i class="icon-checked fa-solid fa-check"></i>
+                        第二裝置靠卡
+                    </div>
+                    <div class="mc-method__img"><img src="img/contactless2.png"></div>
+                    <div class="mc-method__desc">兩台裝置<br>
+                        一個點餐 + 一個靠卡收款<br>
+                        <span class="fs">請準備第二台具靠卡功能之裝置</span><br>
+                        <a href="#">查看支援靠卡之手機 <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action readonly">
+                <span>下一步</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="popClose(this);popTwoContactless()">
+                <span>下一步</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 靠卡設定popup2 -->
+<section id="pop_twocontactless" class="pop pop--center pop__contactless" onclick="popClose(this)">
+    <div class="pop__body">
+        <span class="pop__title">靠卡卡機設定</span>
+        <div class="pop__content flex--center">
+            <div class="select-machine">
+                <div class="select-machine__topbar">
+                    <div class="select-machine__title">選擇卡機</div>
+                    <div class="select-machine__search">
+                        <input type="text" placeholder="搜尋名稱/ID" value="">
+                        <button><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+                    </div>
+                </div>
+
+                <div class="machine-list">
+                    <div class="machine-list__name">卡機 1</div>
+                    <div class="machine-list__id">ASDFGH <i class="fa-solid fa-angle-right fa-lg"></i></div>
+                </div>
+
+                <div class="machine-list">
+                    <div class="machine-list__name">卡機 1</div>
+                    <div class="machine-list__id">ASDFGH <i class="fa-solid fa-angle-right fa-lg"></i></div>
+                </div>
+
+                <div class="machine-list">
+                    <div class="machine-list__name">卡機 1</div>
+                    <div class="machine-list__id">ASDFGH <i class="fa-solid fa-angle-right fa-lg"></i></div>
+                </div>
+
+                <div class="machine-list">
+                    <div class="machine-list__name">卡機 1</div>
+                    <div class="machine-list__id">ASDFGH <i class="fa-solid fa-angle-right fa-lg"></i></div>
+                </div>
+
+                <div class="machine-list">
+                    <div class="machine-list__name">卡機 1</div>
+                    <div class="machine-list__id">ASDFGH <i class="fa-solid fa-angle-right fa-lg"></i></div>
+                </div>
+
+                <div class="machine-list">
+                    <div class="machine-list__name">卡機 1</div>
+                    <div class="machine-list__id">ASDFGH <i class="fa-solid fa-angle-right fa-lg"></i></div>
+                </div>
+
+                <div class="machine-list">
+                    <div class="machine-list__name">卡機 1</div>
+                    <div class="machine-list__id">ASDFGH <i class="fa-solid fa-angle-right fa-lg"></i></div>
+                </div>
+            </div>
+
+            <div class="machine-setting">
+                <div class="machine-setting__topbar">
+                    <div class="machine-setting__title">卡機名稱</div>
+                    <div class="machine-setting__name">卡機 1</div>
+                </div>
+
+                <div class="machineid-list">
+                    <div class="machineid-list__name">ShopID</div>
+                    <div class="machineid-list__id">ASDFGH</div>
+                </div>
+
+                <div class="machineid-list">
+                    <div class="machineid-list__name">DDID</div>
+                    <div class="machineid-list__id">ASDFGH</div>
+                </div>
+
+                <div class="machineid-list">
+                    <div class="machineid-list__name">DeveloperID</div>
+                    <div class="machineid-list__id">ASDFGH</div>
+                </div>
+
+                <div class="machineid-list">
+                    <div class="machineid-list__name">MUID</div>
+                    <div class="machineid-list__id">ASDFGH</div>
+                </div>
+
+                <div class="machineid-list">
+                    <div class="machineid-list__name">CTID</div>
+                    <div class="machineid-list__id">ASDFGH</div>
+                </div>
+
+                <div class="machine-setting__qrcode">
+                    <div class="machine-setting__l">
+                        <h2>第二裝置設定</h2>
+                        <div>請使用第二台裝置<br>
+                            掃描右方QR code完成靠卡設定<br>
+                            或手動輸入下方連結</div>
+
+                        <div class="machine-setting__url">
+                            <span>www.dqr.com</span>
+                            <a><i class="fa-solid fa-copy fa-sm"></i></a>
+                        </div>
+                    </div>
+                    <div class="machine-setting__r">
+                        <img src="img/qrcode.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this);popContactless()">
+                <i class="fa-solid fa-arrow-left fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="popClose(this)">
+                <span>完成</span>
                 <i class="fa-solid fa-arrow-right fa-xl"></i>
             </button>
         </div>
