@@ -8,5 +8,7 @@
     .result__info { display: flex; flex-direction: column; align-items: center; }
     .result__title { font-size: 48px; }
     .result__content { font-size: @fXXL; color: @cG3; }
-    .bottom button.minor { background-color: @c2;
-        > * { color: @c1 !important; }}}
+    .bottom button { width: 50%;
+        &.minor { background-color: @c2;
+            > * { color: @c1 !important; }}
+        span { white-space: nowrap; }}}
