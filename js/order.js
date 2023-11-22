@@ -19,5 +19,8 @@ function popOrderPrint() { document.getElementById("pop__order--print").style.di
 // 取消訂單確認popup
 function popOrderCancelConfirm() { document.getElementById("pop__order-cancel--confirm").style.display = "flex";}
 
+// 靠卡取消訂單popup
+function popOrderCancelTap() { document.getElementById("pop__order-cancel--tap").style.display = "flex";}
+
 // 訂單已取消popup
 function popOrderCancelled() { document.getElementById("pop__order-cancelled").style.display = "flex";}

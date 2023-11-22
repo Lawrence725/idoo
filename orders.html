@@ -621,8 +621,32 @@
                     <button class="pop__action pop__action--minor" onclick="popClose(this)">
                         <i class="fa-solid fa-xmark fa-xl"></i>
                     </button>
-                    <button class="pop__action br" onclick="popOrderCancelled()">
+                    <button class="pop__action br" onclick="popOrderCancelTap()">
                         <span>確定取消</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 靠卡取消訂單popup -->
+        <section id="pop__order-cancel--tap" class="pop pop--center pop__order-cancel--tap" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">此為靠卡交易訂單</span>
+                <span class="pop__content">請依照下列步驟完成訂單取消</span>
+                <ol class="pop__list">
+                    <li>確認靠卡設備開啟並配對完成</li>
+                    <li>查看是否有出現此筆取消訂單資訊</li>
+                    <li>取消完成後可發送簽單</li>
+                </ol>
+                <span class="pop__content">完成上述步驟後，按下述按鈕是否已取消</span>
+                
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action br" onclick="popOrderCancelled()">
+                        <span>更新狀態</span>
                         <i class="fa-solid fa-arrow-right fa-xl"></i>
                     </button>
                 </div>
