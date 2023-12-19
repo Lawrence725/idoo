@@ -4,7 +4,7 @@
     .header__eatin { background-color: @c2 !important;
         > *, > * > * { color: @c1 !important; }
         .header__item-action { display: flex !important; }}
-    .categories { width: 15%; height: 100%; padding-right: 10px; border-right: 1px dashed @cG4; gap: 10px; display: flex; flex-direction: column; overflow-y: auto;
+    .categories { width: 150px; min-width: 150px; max-width: 150px; height: 100%; padding-right: 10px; border-right: 1px dashed @cG4; gap: 10px; display: flex; flex-direction: column; overflow-y: auto;
         .categories__title { width: 100%; padding-bottom: 10px; margin-bottom: -10px; top: 0; position: sticky; text-align: center; font-size: @fL; font-weight: bold; color: @c1; background-color: rgba(@cBg, 0.95); z-index: 2; }
         .category { width: calc(100% - 25px); min-height: 50px; max-height: 50px; padding: 0 0 0 10px; border-radius: 10px 0 0 10px; display: flex; align-items: center;
             &:hover { box-shadow: none; }
@@ -13,7 +13,7 @@
                 &:before { content: ""; width: 0; height: 0; top: 0; right: -25px; position: absolute;
                     border-left: 25px solid @c2; border-top: 25px solid transparent; border-bottom: 25px solid transparent; }
                 span { color: @c1; }}}}
-    .main { width: 45%; height: 100dvh; position: relative; display: flex; flex-direction: column;
+    .main { width: 100%; height: 100dvh; position: relative; display: flex; flex-direction: column;
         .main__title { width: 100%; padding: 15px 0 0; border-bottom: 10px solid @cBg; top: 0; position: absolute; text-align: center; font-size: @fL; font-weight: bold; background-color: rgba(@cBg, 0.95); color: @c1; z-index: 2; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
         .items { padding: 54px 0 15px; margin-bottom: auto; gap: 10px; display: flex; flex-wrap: wrap; overflow-y: auto;
             .item { width: calc(33.33% - 6.67px); height: 120px; padding: 5px 10px; border: 1.5px solid transparent; border-radius: 15px; display: flex; flex-direction: column; justify-content: space-between; background-color: white;
@@ -22,7 +22,7 @@
                 .item__price { display: flex; align-items: baseline;
                     .price__number { font-size: @fXL; font-weight: bold; color: @c1; }
                     .price__sign, .price__decimal { font-size: @fM; font-weight: bold; color: @c1; }}}}
-        .addons { padding-top: 15px; min-height: 245px; max-height: 245px; padding-bottom: 15px; border-top: 1px solid @cG4; gap: 10px; display: flex; flex-wrap: wrap; overflow-y: auto;
+        .addons { padding-top: 15px; min-height: 50%; max-height: 50%; padding-bottom: 15px; border-top: 1px solid @cG4; gap: 10px; display: flex; align-content: flex-start; flex-wrap: wrap; overflow-y: auto;
             .addon { width: calc(20% - 8px); height: 90px; padding: 2.5px 5px; border: 1.5px solid transparent; border-radius: 5px 15px 15px 5px; position: relative; display: flex; flex-direction: column; justify-content: space-between; background-color: white;
                 &.addon--active { border: 1.5px solid @c1; background-color: @c2; }
                 .addon__name { font-size: @fL; line-height: 120%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
