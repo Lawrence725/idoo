@@ -229,8 +229,9 @@ button { width: fit-content; height: 60px; padding: 0 20px; border-radius: 30px;
         div { min-width: 30px; max-width: 30px; min-height: 30px; max-height: 30px; border-radius: 3px; background-color: white; transform: rotate(45deg); }}
     .actions { gap: 10px; display: flex; flex-wrap: wrap; z-index: 3;
         .payment--cash, .payment--mobile, .order--cash, .order--code, .order--cancel, .order--print, .order--ready, .payment--checkout.half {
-            width: calc(50% - 5px); height: 90px; padding: 0; border-radius: 20px; gap: 0; flex-direction: column; align-items: center; justify-content: center;
+            width: calc(50% - 5px); height: 80px; padding: 0; border-radius: 20px; gap: 0; flex-direction: column; align-items: center; justify-content: center;
             span { font-size: @fL; }
+            span.title { font-size: @fXL; }
             i, svg { line-height: normal; }
             .fs { margin-top: -5px; font-size: @fM; opacity: 0.5; }
         }
