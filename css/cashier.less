@@ -1,20 +1,31 @@
 @import "./style.less";
 // Cashier Global
-.top { width: 100%; max-width: 440px; padding: 20px 20px 30px; top: 0; position: fixed; display: flex; align-items: center; justify-content: center;
+.top { width: 100%; max-width: 440px; height: 70px; padding: 0 20px; border-bottom: 1.5px solid @cBg; top: 0; position: fixed; display: flex; align-items: center; justify-content: center; background-color: white;
     .top__left, .top__right { width: 100%; display: flex;
         a { display: flex; }
-        i, svg { color: white; }}
+        i, svg { color: @c1; }}
     .top__right { justify-content: flex-end; }
-    .top__title { white-space: nowrap; color: white; font-size: @fL; font-weight: bold; }
-    .top__bg { bottom: 0; width: 1500px; height: 1500px; border-radius: 999px; position: absolute; background-color: @c1; z-index: -1; }}
+    .top__center { display: flex; flex-direction: column; align-items: center; }
+    .top__title { white-space: nowrap; color: @cG1; font-size: @fXL; }
+    .top__content { margin-top: -5px; white-space: nowrap; color: @cG4; font-size: @fL; }
+    .top__bg { display: none; bottom: 0; width: 1500px; height: 1500px; border-radius: 999px; position: absolute; background-color: @c1; z-index: -1; }}
 .bottom { width: 100%; max-width: 440px; padding: 20px; bottom: 0; position: fixed; display: flex; gap: 10px;
     button { width: 100%; }}
+.foot { width: 100%; max-width: 440px; padding: 10px; border-top: 1.5px solid @cBg; bottom: 0; position: fixed; display: flex; gap: 10px; background-color: white;
+    .foot__button { width: 100%; gap: 5px; display: flex; flex-direction: column; align-items: center;
+        &.foot__button--active {
+            span { color: @c1; }}
+        img { height: 30px; }
+        span { font-size: @fM; color: @cG5; }}}
 
 // Local
-.cashier { padding: 130px 20px; display: flex; align-items: center; flex-direction: column; gap: 50px;
+.cashier { padding: 80px 20px; display: flex; align-items: center; flex-direction: column; gap: 50px;
     .cashier__input { max-width: 400px; font-size: @fXXL; text-align: center; }
     .cashier__numbers { width: 100%; max-width: 400px; gap: 10px; display: flex; flex-wrap: wrap;
-        a { width: calc(33.33% - 6.67px); height: 80px; padding-bottom: 5px; border-radius: 30px; display: flex; align-items: center; justify-content: center; font-size: @fXXL; background-color: @cBg;
+        a { width: calc(33.33% - 6.67px); height: 60px; padding-bottom: 5px; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-size: @fXXL; background-color: @cBg;
             &.cashier__number--sign { display: none; background-color: @c2; color: @c1; }
             &.cashier__number--delete { background-color: transparent;
-                i, svg { color: @cG4; font-size: unset; }}}}}
+                i, svg { color: @cG4; font-size: unset; }}}}
+    button { width: 200px; height: 50px; min-height: 50px; margin-bottom: 100px;
+        i { display: none; }
+        span { font-size: @fL; }}}

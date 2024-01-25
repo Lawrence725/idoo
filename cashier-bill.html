@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-TW" translate="no">
+    <head>
+        <title>iDoo 愛收銀</title>
+        <link rel="icon" type="image/svg" href="./img/icon/favicon.svg"/> 
+        <meta charset="UTF-8">
+        <meta name="keywords" content="iDoo 愛收銀">
+        <meta name="description" content="iDoo 愛收銀">
+        <meta name="author" content="DotDot">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="google" content="notranslate">
+        <!-- CSS -->
+        <link href="./css/cashier-bill.less" rel="stylesheet/less" type="text/css"/>
+        <link href="./css/fontawesome-free-6.3.0-web/css/all.css" rel="stylesheet"> <!-- Awesome Icon -->
+    </head>
+    <body class="cashier-bill">
+        <section class="top">
+            <div class="top__bg"></div>
+            <div class="top__left">
+                <!-- <a href="javascript:history.back()"><i class="fa-solid fa-chevron-left fa-xl"></i></a> -->
+            </div>
+            <div class="top__center">
+                <span class="top__title">結算</span>
+                <span class="top__content">7/20 19:00 - 7/21 03:00</span>
+            </div>
+            <div class="top__right"></div>
+        </section>
+        <table class="bill">
+            <tr>
+                <th>結算項目</th>
+                <th>訂單數</th>
+                <th>金額</th>
+            </tr>
+            <tr class="bill__total">
+                <td>總營業</td>
+                <td>90</td>
+                <td>$7000</td>
+            </tr>
+            <tr>
+                <td><div class="title">
+                    <img src="./img/icon/p-cash.png">
+                    <span>現金</span>
+                </div></td>
+                <td>10</td>
+                <td><a class="button" onclick="popCash()">未輸入</a></td>
+            </tr>
+            <tr>
+                <td><div class="title">
+                    <img src="./img/icon/p-card.png">
+                    <span>信用卡</span>
+                </div></td>
+                <td>10</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td><div class="title">
+                    <img src="./img/icon/p-line.png">
+                    <span>LINE Pay</span>
+                </div></td>
+                <td>10</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td><div class="title">
+                    <img src="./img/icon/p-jko.png">
+                    <span>街口支付</span>
+                </div></td>
+                <td>10</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td><div class="title">
+                    <img src="./img/icon/p-easy.png">
+                    <span>悠遊付</span>
+                </div></td>
+                <td>10</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td><div class="title">
+                    <img src="./img/icon/p-icash.png">
+                    <span>icashPay</span>
+                </div></td>
+                <td>10</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td><div class="title">
+                    <img src="./img/icon/p-px.png">
+                    <span>全支付</span>
+                </div></td>
+                <td>10</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td><div class="title">
+                    <img src="./img/icon/p-plus.png">
+                    <span>全盈支付</span>
+                </div></td>
+                <td>10</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td><div class="title">
+                    <img src="./img/icon/p-taiwan.png">
+                    <span>台灣Pay</span>
+                </div></td>
+                <td>10</td>
+                <td>$1000</td>
+            </tr>
+            <tr class="bill__discount">
+                <td>會員折抵</td>
+                <td>90</td>
+                <td>-$1000</td>
+            </tr>
+        </table>
+        <button onclick="popQr()">
+            <span>產生QR code</span>
+        </button>
+        <section class="foot">
+            <a href="menu.html" class="foot__button">
+                <img src="./img/icon/m-back.svg">
+                <span>選單</span>
+            </a>
+            <a href="cashier.html" class="foot__button">
+                <img src="./img/icon/m-cashier.svg">
+                <span>收銀</span>
+            </a>
+            <a href="cashier-records.html" class="foot__button">
+                <img src="./img/icon/m-list.svg">
+                <span>紀錄</span>
+            </a>
+            <a href="cashier-bill.html" class="foot__button foot__button--active">
+                <img src="./img/icon/m-bill-a.svg">
+                <span>結算</span>
+            </a>
+            <a class="foot__button">
+                <img src="./img/icon/m-setting.svg">
+                <span>設定</span>
+            </a>
+        </section>
+
+        <!-- 現金popup -->
+        <section id="pop__cash" class="pop pop--center pop__cash" onclick="popClose(this)">
+            <div class="pop__body">
+                <input class="cash__input" type="text" placeholder="輸入現金營業額" value="" disabled>
+                <div class="cash__numbers">
+                    <a>7</a><a>8</a><a>9</a>
+                    <a>4</a><a>5</a><a>6</a>
+                    <a>1</a><a>2</a><a>3</a>
+                    <div></div>
+                    <a>0</a>
+                    <a class="cash__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                </div>
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <span>取消</span>
+                    </button>
+                    <button class="pop__action" onclick="popClose(this)">
+                        <span>確認</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+         <!-- QRcode popup -->
+         <section id="pop__qr" class="pop pop--center pop__qr" onclick="popClose(this)">
+            <div class="pop__body">
+                <a class="pop__close" onclick="popClose(this)">
+                    <i class="fas fa-times"></i>
+                </a>
+                <span class="pop__title">結算QR code</span>
+                <img class="qr__image" src="./img/qrcode.jpg">
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popConfirm()">
+                        <span>儲存照片</span>
+                    </button>
+                    <button class="pop__action">
+                        <span>分享照片</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirm popup -->
+        <section id="pop__confirm" class="pop pop__confirm" onclick="popClose(this)">
+           <div class="pop__body">
+                <i class="fa-regular fa-circle-check fa-2x"></i>
+                <span class="pop__title">已儲存照片</span>
+           </div>
+       </section>
+
+        <!-- Script -->
+        <script src="./js/less.js" ></script> <!-- Less -->
+        <script src="./js/cashier-bill.js"></script>
+    </body>
+</html>

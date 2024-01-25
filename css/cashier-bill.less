@@ -1,0 +1,33 @@
+@import "./cashier.less";
+.cashier-bill { padding: 80px 20px; display: flex; align-items: center; flex-direction: column; gap: 10px;
+    .bill { width: 100%; max-width: 400px; border-spacing: 0;
+        th, td { width: 25%; padding: 5px 0; text-align: center; font-size: @fL;
+            &:first-child { width: 50%; text-align: left; }
+            &:last-child { width: 25%; text-align: right; }
+            .title { gap: 5px; display: flex; align-items: center;
+                img { width: 30px; }
+                span { font-size: @fL; }}
+            .button { color: @cRed; font-size: @fL; text-decoration: underline !important; }}
+        .bill__total td { border-bottom: 2px dashed @cG6; }
+        .bill__discount td { border-top: 2px dashed @cG6; }}
+    button { width: 200px; height: 50px; min-height: 50px;
+        span { font-size: @fL; }}
+    .pop__cash {
+        .cash__input { max-width: 400px; font-size: @fXXL; text-align: center; }
+        .cash__numbers { width: 100%; max-width: 400px; gap: 10px; display: flex; flex-wrap: wrap;
+            a { width: calc(33.33% - 6.67px); height: 80px; padding-bottom: 5px; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-size: @fXXL; background-color: @cBg;
+                &.cash__number--delete { background-color: transparent;
+                    i, svg { color: @cG5; font-size: unset; }}}
+            div { width: calc(33.33% - 6.67px); height: 60px; }}
+        .pop__actions { gap: 10px;
+            .pop__action { width: 100%; }}}
+    .pop__qr {
+        .pop__title { width: 100%; color: @cG1; text-align: left; font-weight: normal; }
+        .qr__image { height: 200px; }
+        .pop__actions { gap: 10px;
+            .pop__action { width: 100%; }}}
+    .pop__confirm { padding: 100px; background-color: transparent;
+        .pop__body { width: fit-content; padding: 0 10px 0 0; gap: 5px; flex-direction: row;
+            i, svg { color: @cGreen; }
+            .pop__title { color: @cG1; font-size: @fM; font-weight: normal; }}}
+}

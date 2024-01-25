@@ -18,11 +18,11 @@
         <section class="top">
             <div class="top__bg"></div>
             <div class="top__left">
-                <a><i class="fa-solid fa-house fa-lg"></i></a>
+                <!-- <a><i class="fa-solid fa-house fa-lg"></i></a> -->
             </div>
-            <span class="top__title">iDoo收銀</span>
+            <span class="top__title">收銀</span>
             <div class="top__right">
-                <a href="cashier-records.html"><i class="fa-solid fa-clipboard-list fa-xl"></i></a>
+                <!-- <a href="cashier-records.html"><i class="fa-solid fa-clipboard-list fa-xl"></i></a> -->
             </div>
         </section>
         <input class="cashier__input" type="text" placeholder="輸入消費金額" value="" disabled>
@@ -34,11 +34,31 @@
             <a class="cashier__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
             <a class="cashier__number--sign">÷</a>
         </div>
-        <section class="bottom">
-            <button onclick="window.location.href='cashier-checkout.html'">
-                <span>下一步</span>
-                <i class="fa-solid fa-chevron-right fa-xl"></i>
-            </button>
+        <button onclick="window.location.href='cashier-checkout.html'">
+            <span>下一步</span>
+            <i class="fa-solid fa-chevron-right fa-xl"></i>
+        </button>
+        <section class="foot">
+            <a href="menu.html" class="foot__button">
+                <img src="./img/icon/m-back.svg">
+                <span>選單</span>
+            </a>
+            <a href="cashier.html" class="foot__button foot__button--active">
+                <img src="./img/icon/m-cashier-a.svg">
+                <span>收銀</span>
+            </a>
+            <a href="cashier-records.html" class="foot__button">
+                <img src="./img/icon/m-list.svg">
+                <span>紀錄</span>
+            </a>
+            <a href="cashier-bill.html" class="foot__button">
+                <img src="./img/icon/m-bill.svg">
+                <span>結算</span>
+            </a>
+            <a class="foot__button">
+                <img src="./img/icon/m-setting.svg">
+                <span>設定</span>
+            </a>
         </section>
         <!-- Script -->
         <script src="./js/less.js" ></script> <!-- Less -->
