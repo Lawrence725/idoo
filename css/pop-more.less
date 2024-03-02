@@ -7,9 +7,11 @@
             span { color: white; font-size: @fL; white-space: nowrap; }
             .more__action-dot { width: 20px; height: 20px; border: 3px solid @c1; border-radius: 99px; top: 5px; right: 15px; position: absolute; background-color: @cRed; }
             .icon-cashier { display: inline-block; width: 27px; height: 28px; background: url('../img/icon/cashier.svg') no-repeat center; background-size: contain; }
-            .icon-cashier + span { margin-top: -5px; }
+            .icon-cashier + span { margin-top: -4px; }
             .icon-contactless { display: inline-block; width: 27px; height: 28px; background: url('../img/icon/contactless-setting.svg') no-repeat center; background-size: contain; }
-            .icon-contactless + span { margin-top: -5px; }
+            .icon-contactless + span { margin-top: -4px; }
+            .icon-layout { display: inline-block; width: 27px; height: 28px; background: url('../img/icon/layout.svg') no-repeat center; background-size: contain; }
+            .icon-layout + span { margin-top: -4px; }
         }
         .more__gap { width: 2px; height: 30px; border-radius: 99px; background-color: rgba(white, 0.2); }
         .more__action:last-child { width: 120px; 
@@ -27,7 +29,7 @@
     .pop__content { font-size: @fXL !important; }
     .pop__action:not(.pop__action--minor) { background-color: @cRed; }}
 
-.pop__makecollections, .pop__contactless {
+.pop__makecollections, .pop__contactless, .pop__layouts {
     .pop__body { max-width: 800px !important; }
     .pop__content { display: flex; flex-flow: nowrap; justify-content: space-between; width: 100%; padding: 50px 0 20px 0;
         .mc-method, .cl-method { width: 33.3%; padding: 0 30px; 

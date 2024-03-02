@@ -83,6 +83,10 @@
             <i class="fa-solid fa-sack-dollar fa-xl"></i>
             <span>結算</span>
         </a>
+        <a class="more__action" onclick="popLayouts()">
+            <i class="icon-layout"></i>
+            <span>排版設定</span>
+        </a>
         <a class="more__action" onclick="popMakeCollections()">
             <i class="icon-cashier"></i>
             <span>收款模式</span>
@@ -170,6 +174,69 @@
             </button>
             <button class="pop__action" onclick="window.location.href='index.html'">
                 <span>Confirm</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 排版設定popup -->
+<section id="pop__layouts" class="pop pop--center pop__layouts" onclick="popClose(this)" style="display: flex;">
+    <div class="pop__body">
+        <span class="pop__title">選擇排版設定</span>
+        <div class="pop__content">
+            <div class="mc-method">
+                <input type="radio" name="mc-method" id="mc-method1">
+                <label for="mc-method1">
+                    <div class="mc-method__title">
+                        <i class="icon-border"></i>
+                        <i class="icon-checked fa-solid fa-check"></i>
+                        商品為主
+                    </div>
+                    <div class="mc-method__img"><img src="img/layout1.png"></div>
+                    <div class="mc-method__desc">商品70%<br>
+                        加購30%</div>
+                </label>
+            </div>
+
+            <div class="mc-method">
+                <input type="radio" name="mc-method" id="mc-method2">
+                <label for="mc-method2">
+                    <div class="mc-method__title">
+                        <i class="icon-border"></i>
+                        <i class="icon-checked fa-solid fa-check"></i>
+                        一半商品一半加購
+                    </div>
+                    <div class="mc-method__img"><img src="img/layout2.png"></div>
+                    <div class="mc-method__desc">商品50%<br>
+                        加購50%</div>
+                </label>
+            </div>
+
+            <div class="mc-method">
+                <input type="radio" name="mc-method" id="mc-method3">
+                <label for="mc-method3">
+                    <div class="mc-method__title">
+                        <i class="icon-border"></i>
+                        <i class="icon-checked fa-solid fa-check"></i>
+                        加購為主
+                    </div>
+                    <div class="mc-method__img"><img src="img/layout3.png"></div>
+                    <div class="mc-method__desc">商品30%<br>
+                        加購70%</div>
+                </label>
+            </div>
+        </div>
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action readonly">
+                <span>確認</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="popClose(this);popTwoScreenSetting()">
+                <span>確認</span>
                 <i class="fa-solid fa-arrow-right fa-xl"></i>
             </button>
         </div>

@@ -1,4 +1,4 @@
-// Load Header
+靠卡設定// Load Header
 const xhr = new XMLHttpRequest();
 xhr.open("GET", "./header.html", true);
 xhr.send();
@@ -34,6 +34,9 @@ function popLogout() { document.getElementById("pop__logout").style.display = "f
 
 // 選擇語言popup
 function popLanguage() { document.getElementById("pop__language").style.display = "flex";}
+
+// 排版設定popup
+function popLayouts() { document.getElementById("pop__layouts").style.display = "flex";}
 
 // 收款模式popup
 function popMakeCollections() { document.getElementById("pop__makecollections").style.display = "flex";}
