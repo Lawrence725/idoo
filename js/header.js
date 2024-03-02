@@ -1,4 +1,4 @@
-靠卡設定// Load Header
+// Load Header
 const xhr = new XMLHttpRequest();
 xhr.open("GET", "./header.html", true);
 xhr.send();
