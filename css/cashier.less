@@ -19,13 +19,13 @@
         span { font-size: @fM; color: @cG5; }}}
 
 // Local
-.cashier { padding: 80px 20px; display: flex; align-items: center; flex-direction: column; gap: 50px;
+.cashier { padding: 80px 20px; display: flex; align-items: center; justify-content: space-around; flex-direction: column;
     .cashier__input { max-width: 400px; font-size: @fXXL; text-align: center; }
     .cashier__numbers { width: 100%; max-width: 400px; gap: 10px; display: flex; flex-wrap: wrap;
         a { width: calc(33.33% - 6.67px); height: 60px; padding-bottom: 5px; border-radius: 25px; display: flex; align-items: center; justify-content: center; font-size: @fXXL; background-color: @cBg;
             &.cashier__number--sign { display: none; background-color: @c2; color: @c1; }
             &.cashier__number--delete { background-color: transparent;
                 i, svg { color: @cG4; font-size: unset; }}}}
-    button { width: 200px; height: 60px; min-height: 60px; margin-bottom: 100px;
+    button { width: 200px; height: 60px; min-height: 60px;
         i { display: none; }
         span { font-size: @fL; }}}
