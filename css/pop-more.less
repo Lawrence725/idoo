@@ -27,12 +27,15 @@
 .pop__logout {
     .pop__title { font-size: @fXXL !important; font-weight: normal !important; color: @cG1 !important; }
     .pop__content { font-size: @fXL !important; }
-    .pop__action:not(.pop__action--minor) { background-color: @cRed; }}
+    .pop__action:not(.pop__action--minor) { background-color: @cRed; }
+}
 
-.pop__makecollections, .pop__contactless, .pop__layouts {
+.pop__makecollection, .pop__makecollections, .pop__contactless, .pop__layouts {
     .pop__body { max-width: 800px !important; }
-    .pop__content { display: flex; flex-flow: nowrap; justify-content: space-between; width: 100%; padding: 50px 0 20px 0;
-        .mc-method, .cl-method { width: 33.3%; padding: 0 30px; 
+    .pop__content { display: flex; flex-flow: nowrap; justify-content: space-between; 
+        width: 100%; padding: 50px 0 20px 0; margin-top: -30px !important;
+
+        .mc-setting, .mc-method, .cl-method { width: 33.3%; padding: 0 30px; 
             background: url('../img/dashed.svg') repeat-y right center; text-align: center;
 
             input[type=radio] { display: none; }
@@ -133,6 +136,68 @@
             }
         }
         .mc-setting:last-child { background: none; }
+    }
+}
+.pop__makecollection .pop__content { display: grid; grid-template-columns: 33.3% 33.4% 33.3%; 
+
+    .mc-setting { display: grid; width: 100%; padding: 8px !important; background: none;
+    
+        input[type=radio] + label { position: relative; width: 100%; padding: 10px; 
+            border: 3px solid @cBg; border-radius: 20px; background: @cBg; border-radius: 20px;
+            .icon-checked { display: none; }
+        }
+        input[type=radio]:checked + label { border-color: @c1; 
+            .icon-checked { display: flex; justify-content: center; align-items: center; 
+                position: absolute; width: 30px; height: 30px; padding: 2px; top: -10px; left: -10px; 
+                color: @c1; font-size: 26px; background: @cBg; border-radius: 99em; }
+        }
+
+        .mc-setting__edit { position: absolute; height: auto; padding: 0; right: 10px; top: 10px; background: none;
+            .icon-pen {  display: flex; justify-content: center; align-items: center; 
+                width: 30px; height: 30px; background: url('../img/icon/pen.svg') no-repeat center; background-size: 60%; }
+        }
+
+        .mc-setting__title { color: @cG2; font-weight: bold; }
+        .mc-setting__id { color: @cG4; }
+        .mc-setting__serialnum { color: @cG4; font-size: @fXS; }
+
+        .mc-setting__type { display: flex; justify-content: center; align-items: center;
+            span { display: inline-flex; justify-content: center; align-items: center; color: @cG4; font-size: @fS;
+                filter: grayscale(1); -webkit-filter: grayscale(1);
+            }
+            .current { color: @c1; filter: grayscale(0); -webkit-filter: grayscale(0); }
+
+            .icon-qrcode { display: inline-block; margin-right: 2px;
+                width: 16px; height: 16px; background: url('../img/icon/qrcode.svg') no-repeat center; background-size: 85%; }
+            .icon-contactless { display: inline-block; 
+                width: 16px; height: 16px; background: url('../img/icon/contactless-solid.svg') no-repeat center; background-size: 85%; }
+        }
+
+        .mc-setting__device { display: flex; flex-flow: wrap; justify-content: space-between; margin-top: 5px; 
+            .mc-setting__device__item { width: calc(50% - 25px);
+                .icon-link { display: inline-block; margin-right: 2px;
+                    width: 24px; height: 24px; background: url('../img/icon/link.svg') no-repeat center; background-size: contain; }
+                .mc-setting__title { font-weight: normal; font-size: @fS; }
+                .mc-method__img { margin: 0 auto; }
+            }
+            .mc-setting__device__item.mid { width: 50px; }
+        }
+    }
+}
+
+.pop__replaceconfirm {
+    .pop__body { overflow: inherit !important; 
+        .pop__title { color: @cG2 !important;  font-size: @fXXL !important; font-weight: normal !important; }
+        .pop__content { color: @cRed !important; }
+        .pop__action.br { color: #FFFFFF; background-color: @cRed !important; }
+    }
+}
+
+.pop__counternaming {
+    .pop__body { 
+        .pop__title { color: @cG2 !important;  font-size: @fXXL !important; font-weight: normal !important; }
+        .pop__counternaming__input { width: 100%; height: 48px; margin: 10px auto; 
+            font-size: @fL; text-align: center; line-height: 48px; border-bottom: 1px solid @cG6; }
     }
 }
 

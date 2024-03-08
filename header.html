@@ -87,14 +87,21 @@
             <i class="icon-layout"></i>
             <span>排版設定</span>
         </a>
-        <a class="more__action" onclick="popMakeCollections()">
+
+        <a class="more__action" onclick="popMakeCollection()">
+            <i class="icon-cashier"></i>
+            <span>收款設定</span>
+        </a>
+
+        <!-- <a class="more__action" onclick="popMakeCollections()">
             <i class="icon-cashier"></i>
             <span>收款模式</span>
         </a>
         <a class="more__action" onclick="popContactless()">
             <i class="icon-contactless"></i>
             <span>靠卡設定</span>
-        </a>
+        </a> -->
+
         <a class="more__action">
             <i class="fa-solid fa-cash-register fa-xl"></i>
             <span>錢箱</span>
@@ -186,8 +193,8 @@
         <span class="pop__title">選擇排版設定</span>
         <div class="pop__content">
             <div class="mc-method">
-                <input type="radio" name="mc-method" id="mc-method1">
-                <label for="mc-method1">
+                <input type="radio" name="layout" id="layout1">
+                <label for="layout1">
                     <div class="mc-method__title">
                         <i class="icon-border"></i>
                         <i class="icon-checked fa-solid fa-check"></i>
@@ -200,8 +207,8 @@
             </div>
 
             <div class="mc-method">
-                <input type="radio" name="mc-method" id="mc-method2">
-                <label for="mc-method2">
+                <input type="radio" name="layout" id="layout2">
+                <label for="layout2">
                     <div class="mc-method__title">
                         <i class="icon-border"></i>
                         <i class="icon-checked fa-solid fa-check"></i>
@@ -214,8 +221,8 @@
             </div>
 
             <div class="mc-method">
-                <input type="radio" name="mc-method" id="mc-method3">
-                <label for="mc-method3">
+                <input type="radio" name="layout" id="layout3">
+                <label for="layout3">
                     <div class="mc-method__title">
                         <i class="icon-border"></i>
                         <i class="icon-checked fa-solid fa-check"></i>
@@ -237,6 +244,180 @@
             </button>
             <button class="pop__action" onclick="popClose(this);">
                 <span>確認</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 收款設定popup -->
+<section id="pop__makecollection" class="pop pop--center pop__makecollection" onclick="popClose(this)">
+    <div class="pop__body">
+        <span class="pop__title">選擇收單櫃位</span>
+        <div class="pop__content">
+            <div class="mc-setting">
+                <input type="radio" name="mc-setting" id="mc-setting1" onclick="popReplaceConfirm();">
+                <label for="mc-setting1">
+                    <i class="icon-checked fa-regular fa-circle-check"></i>
+                    <button class="mc-setting__edit" onclick="popCounterNaming();"><i class="icon-pen"></i></button>
+                    <div class="mc-setting__title">櫃位A</div>
+                    <div class="mc-setting__id">T1234567</div>
+                    <div class="mc-setting__type">
+                        <span class="current"><i class="icon-qrcode"></i>掃碼</span>
+                        ・
+                        <span><i class="icon-contactless"></i>感應</span>
+                    </div>
+                    <div class="mc-setting__device">
+                        <div class="mc-setting__device__item">
+                            <div class="mc-method__img"><img src="img/iphone.png"></div>
+                            <div class="mc-setting__title">Redmi A2</div>
+                            <div class="mc-setting__serialnum">1234567890123456789012345678</div>
+                        </div>
+                        <div class="mc-setting__device__item mid"><i class="icon-link"></i></div>
+                        <div class="mc-setting__device__item">
+                            <div class="mc-method__img"><img src="img/ipad.png"></div>
+                            <div class="mc-setting__title">iPad</div>
+                            <div class="mc-setting__serialnum">1234567890123456789012345678</div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="mc-setting">
+                <input type="radio" name="mc-setting" id="mc-setting2" onclick="popReplaceConfirm();">
+                <label for="mc-setting2">
+                    <i class="icon-checked fa-regular fa-circle-check"></i>
+                    <button class="mc-setting__edit" onclick="popCounterNaming();"><i class="icon-pen"></i></button>
+                    <div class="mc-setting__title">櫃位B</div>
+                    <div class="mc-setting__id">T1234567</div>
+                    <div class="mc-setting__type">
+                        <span><i class="icon-qrcode"></i>掃碼</span>
+                        ・
+                        <span><i class="icon-contactless"></i>感應</span>
+                    </div>
+                    <div class="mc-setting__device">
+                        <div class="mc-setting__device__item">
+                            <div class="mc-method__img"><img src="img/iphone.png"></div>
+                            <div class="mc-setting__title">Redmi A2</div>
+                            <div class="mc-setting__serialnum">1234567890123456789012345678</div>
+                        </div>
+                        <div class="mc-setting__device__item mid"><i class="icon-link"></i></div>
+                        <div class="mc-setting__device__item">
+                            <div class="mc-method__img"><img src="img/nodevice.png"></div>
+                            <div class="mc-setting__title">未綁定裝置</div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="mc-setting">
+                <input type="radio" name="mc-setting" id="mc-setting3" onclick="popReplaceConfirm();">
+                <label for="mc-setting3">
+                    <i class="icon-checked fa-regular fa-circle-check"></i>
+                    <button class="mc-setting__edit" onclick="popCounterNaming();"><i class="icon-pen"></i></button>
+                    <div class="mc-setting__title">櫃位C</div>
+                    <div class="mc-setting__id">T1234567</div>
+                    <div class="mc-setting__type">
+                        <span><i class="icon-qrcode"></i>掃碼</span>
+                        ・
+                        <span class="current"><i class="icon-contactless"></i>感應</span>
+                    </div>
+                    <div class="mc-setting__device">
+                        <div class="mc-setting__device__item">
+                            <div class="mc-method__img"><img src="img/iphone.png"></div>
+                            <div class="mc-setting__title">Redmi A2</div>
+                            <div class="mc-setting__serialnum">1234567890123456789012345678</div>
+                        </div>
+                        <div class="mc-setting__device__item mid"><i class="icon-link"></i></div>
+                        <div class="mc-setting__device__item">
+                            <div class="mc-method__img"><img src="img/iminswan.png"></div>
+                            <div class="mc-setting__title">iMin Swan</div>
+                            <div class="mc-setting__serialnum">1234567890123456789012345678</div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="mc-setting">
+                <input type="radio" name="mc-setting" id="mc-setting4" onclick="popReplaceConfirm();">
+                <label for="mc-setting4">
+                    <i class="icon-checked fa-regular fa-circle-check"></i>
+                    <button class="mc-setting__edit" onclick="popCounterNaming();"><i class="icon-pen"></i></button>
+                    <div class="mc-setting__title">櫃位C</div>
+                    <div class="mc-setting__id">T1234567</div>
+                    <div class="mc-setting__type">
+                        <span><i class="icon-qrcode"></i>掃碼</span>
+                        ・
+                        <span class="current"><i class="icon-contactless"></i>感應</span>
+                    </div>
+                    <div class="mc-setting__device">
+                        <div class="mc-setting__device__item">
+                            <div class="mc-method__img"><img src="img/iphone.png"></div>
+                            <div class="mc-setting__title">Redmi A2</div>
+                            <div class="mc-setting__serialnum">1234567890123456789012345678</div>
+                        </div>
+                        <div class="mc-setting__device__item mid"><i class="icon-link"></i></div>
+                        <div class="mc-setting__device__item">
+                            <div class="mc-method__img"><img src="img/otherdevice.png"></div>
+                            <div class="mc-setting__title">其他裝置</div>
+                            <div class="mc-setting__serialnum">1234567890123456789012345678</div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action readonly">
+                <span>完成</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="popClose(this);">
+                <span>完成</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 確定取代綁定popup -->
+<section id="pop__replaceconfirm" class="pop pop--center pop__replaceconfirm" onclick="popClose(this)">
+    <div class="pop__body">
+        <div class="pop__icons">
+            <div class="pop__icon pop__icon--red">
+                <i class="fa-solid fa-exclamation fa-2xl"></i>
+            </div>
+        </div>
+        
+        <span class="pop__title">確定取代綁定？</span>
+        <span class="pop__content">櫃位已綁定其他刷卡機</span>
+        
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action br" onclick="popClose(this)">
+                <span>確定取代</span>
+                <i class="fa-solid fa-arrow-right fa-xl"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- 櫃位命名popup -->
+<section id="pop__counternaming" class="pop pop--center pop__counternaming" onclick="popClose(this)">
+    <div class="pop__body">
+        <span class="pop__title">櫃位命名</span>
+        <span class="pop__content"><input class="pop__counternaming__input" type="text" value="櫃位2" placeholder="櫃位2"></span>
+        
+        <div class="pop__actions">
+            <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <button class="pop__action" onclick="popClose(this)">
+                <span>儲存</span>
                 <i class="fa-solid fa-arrow-right fa-xl"></i>
             </button>
         </div>

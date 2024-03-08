@@ -38,6 +38,15 @@ function popLanguage() { document.getElementById("pop__language").style.display 
 // 排版設定popup
 function popLayouts() { document.getElementById("pop__layouts").style.display = "flex";}
 
+// 收款設定popup
+function popMakeCollection() { document.getElementById("pop__makecollection").style.display = "flex";}
+
+// 確定取代綁定popup
+function popReplaceConfirm() { document.getElementById("pop__replaceconfirm").style.display = "flex";}
+
+// 櫃位命名popup
+function popCounterNaming() { document.getElementById("pop__counternaming").style.display = "flex";}
+
 // 收款模式popup
 function popMakeCollections() { document.getElementById("pop__makecollections").style.display = "flex";}
 
