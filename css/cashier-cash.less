@@ -1,13 +1,13 @@
 @import "./cashier.less";
-.cashier-cash { height: unset; padding: 100px 20px; display: flex; align-items: center; flex-direction: column; gap: 20px;
+.cashier-cash { height: 100vh; padding: 90px 20px 100px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;
     .cash__details { display: flex; gap: 15px;
-        .cash__detail { width: 100px; height: 60px; border: 1.5px solid @cG5; border-radius: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        .cash__detail { width: 150px; height: 30px; padding: 0 10px; border: 1.5px solid @cG5; border-radius: 15px; display: flex; align-items: baseline; justify-content: space-between;
             .title { font-size: @fM; color: @cG3; }
             .content { font-size: @fL; }}}
-    .cash__main { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    .cash__main { width: 100%; max-width: 400px; display: flex; align-items: baseline; justify-content: space-between;
         .title { font-size: @fXXL; color: @c1; }
         .content { font-size: 48px; }}
-    .cash__change { display: flex; flex-direction: column; align-items: center;
+    .cash__change { width: 100%; max-width: 400px; display: flex; align-items: baseline; justify-content: space-between;
         .title { font-size: @fL; color: @c1; }
         .content { font-size: @fXL; }}
     .cash_calculate { width: 100%; max-width: 400px; padding: 10px; border-radius: 15px; gap: 10px; display: flex; flex-direction: column; background-color: @cBg;
@@ -19,5 +19,4 @@
                 &.calculate--shortcut { border: 1px solid @cG5; background-color: transparent; font-size: @fL; }
                 &.calculate--none { background-color: transparent; pointer-events: none; }
                 &.calculate--delete { background-color: transparent;
-                    i, svg { color: @cG4; font-size: unset; }}}}
-    }}
+                    i, svg { color: @cG4; font-size: unset; }}}}}}
