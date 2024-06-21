@@ -7,21 +7,39 @@
             input { width: 100%; }
             span { width: 100%; }
             i, svg { color: @c1; }}}    
-    .record { width: 100%; max-width: 400px; gap: 10px; display: flex; flex-direction: column; align-items: center;
-        &:not(:nth-child(3)) { padding-top: 10px; border-top: 1px solid @cG5; }
-        &.record--opened {
-            .record__details, .record__refund { display: flex; }}
-        .record__main { width: 100%; gap: 10px; display: flex; align-items: center;
-            .record__info { width: 100%; display: flex; flex-direction: column;
-                .record__title { font-size: @fL; }
-                .record__warning { margin-top: -2px; color: @cRed; }}
-            .record__price { font-size: @fL; font-weight: bold; color: @c1; }
+
+    .records { padding-bottom: 100px; }
+    .record { width: 100%; max-width: 400px; margin-bottom: 10px; padding-bottom: 15px; gap: 10px; 
+        display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid @cG5;
+
+        .record__main { width: 100%; gap: 10px; display: flex; align-items: flex-start;
+            .record__info { width: 100%; display: flex; flex-direction: column; }
+            .record__info.pay__info { text-align: right; }
+            .record__price { font-size: @fL; font-weight: 600; color: @cG1; }
             .record__method { width: 30px; }
-            i, svg { color: @cG4; }}
-        .record__details { width: 100%; padding: 5px 10px; border-radius: 10px; gap: 1px; display: none; flex-direction: column; background-color: @cBg;
+            .record__title { font-size: @fL; }
+            .record__warning { margin-top: -2px; color: @cRed; font-weight: bold; }
+            .record__date, .record__serial, .record__point, .record__discount { font-size: @fM; color: @cG4; }
+            .record__payment, .record__point { display: flex; justify-content: flex-end; align-items: center; color: @cG4; 
+                    > img { margin-left: 5px; margin-top: 2px; width: 24px; }
+            }
+            i, svg { color: @cG4; }
+            .record__arrow { height: 100px; display: flex; align-items: center; }
+        }
+        .record__details { display: none; width: 100%; padding: 5px 10px; border-radius: 10px; gap: 1px; display: none; flex-direction: column; background-color: @cBg;
             .record__detail { gap: 10px; display: flex;
-                .title { color: @cG3; white-space: nowrap; }}}
-        .record__refund { display: none; text-decoration: underline !important; color: @c1; }}
+                .title { color: @cG3; white-space: nowrap; }
+            }
+        }
+        .record__action { width: 100%; display: none; flex-flow: nowrap; justify-content: space-between; align-items: center;
+            > a { display: block !important; width: 100%; text-align: center; text-decoration: underline !important; color: @c1; }
+            .record__cancel { color: @cRed; }
+        } 
+        &.record--opened {
+            .record__details, .record__action { display: flex; }
+        }
+        &:last-child { border-bottom: none; }
+    }
     .pop__refund .pop__body { padding: 15px; border-radius: 20px; overflow: visible;
         .pop__icon { margin-top: -55px; width: 80px; height: 80px; border: 7.5px solid @cRed; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white;  box-shadow: 0px 5px 10px 0px rgba(55, 84, 170, 0.20);
             i, svg { color: @cRed; }}
