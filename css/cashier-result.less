@@ -18,3 +18,35 @@
             &:not(.minor) { width: 100%; }
             span { font-size: @fL; white-space: nowrap; }
             i, svg { display: none; }}}}
+
+.pop.pop__send-eorder .pop__body { max-width: 340px; min-height: 490px;
+    .pop__title { width: 100%; color: @cG2; font-size: @fL; font-weight: normal; }
+    .pop__close { position: absolute; top: 40px; right: 25px; color: @cG5; font-size: @fL; }
+    .pop__actions { gap: 10px;
+        > button { width: 100%; height: 40px;
+           > span { font-size: @fM; }
+        }
+    }
+    .pop__tabs { width: 100%; display: flex; flex-flow: nowrap; align-items: flex-end;
+        > a { width: 100%; padding: 5px 10px; text-align: center; color: @cG5; font-size: @fM; border-bottom: 1px solid @cG5; border-radius: 0; }
+        > a.current { color: @c1; border-bottom: 3px solid @c1; }
+    }
+    .pop__pane { display: none; }
+
+    .discount__input { margin-bottom: 15px; font-size: @fXL; }
+    .discount__numbers { width: 100%; gap: 10px; 
+        > a { height: 50px; font-size: @fXL; }
+        .discount__number--delete { font-size: @fXXL; }
+    }
+}
+
+.pop.pop__order--send .pop__body { max-width: 340px; overflow: visible; 
+    .pop__icons .pop__icon { width: 80px; height: 80px; font-size: @fXL; border-width: 7px; }
+    .pop__title { width: 100%; color: @cG2; font-size: @fL; font-weight: normal; text-align: center; }
+    .pop__content { color: @cG4; font-size: @fM; }
+    .pop__actions { gap: 10px;
+        > button { width: 100%; height: 40px;
+           > span { font-size: @fM; }
+        }
+    }
+}

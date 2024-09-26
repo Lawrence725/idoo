@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
         <meta name="google" content="notranslate">
         <!-- CSS -->
+        <link href="./css/pop-discount.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/cashier-result.less" rel="stylesheet/less" type="text/css"/>
         <link href="./css/fontawesome-free-6.3.0-web/css/all.css" rel="stylesheet"> <!-- Awesome Icon -->
     </head>
@@ -38,11 +39,11 @@
             <img src="./img/qrcode.jpg" alt="QR Code">
         </div>
         <section class="bottom">
-            <button class="minor">
+            <button class="minor" onclick="popSendEorder('pop__sms')">
                 <i class="fa-solid fa-clipboard-list fa-xl"></i>
                 <span>簡訊發送簽單</span>
             </button>
-            <button class="minor">
+            <button class="minor" onclick="popSendEorder('pop__email')">
                 <i class="fa-solid fa-clipboard-list fa-xl"></i>
                 <span>Email發送簽單</span>
             </button>
@@ -51,7 +52,71 @@
                 <i class="fa-solid fa-plus fa-xl"></i>
             </button>
         </section>
+
+        <!-- 發送電子簽單popup -->
+        <section id="pop__send-eorder" class="pop pop--center pop__discount pop__send-eorder" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">發送電子簽單</span>
+                <span class="pop__close" onclick="popClose(this)"><i class="fa-solid fa-xmark fa-lg"></i></span>
+
+                <div class="pop__tabs">
+                    <a class="pop__tabs__a" rel="pop__sms" id="pop__sms-tab">簡訊</a>
+                    <a class="pop__tabs__a" rel="pop__email" id="pop__email-tab">Email</a>
+                </div>
+
+                <!-- 發送至簡訊 -->
+                 <div class="pop__pane" id="pop__sms">
+                    <div class="discount__result">
+                        <input class="discount__input" type="text" placeholder="輸入電話號碼" value="" disabled>
+                    </div>
+                    
+                    <div class="discount__numbers">
+                        <a>7</a><a>8</a><a>9</a>
+                        <a>4</a><a>5</a><a>6</a>
+                        <a>1</a><a>2</a><a>3</a>
+                        <a class="discount__number--none"></a>
+                        <a>0</a>
+                        <a class="discount__number--delete"><i class="fa-solid fa-delete-left fa-lg"></i></a>
+                    </div>
+                </div>
+
+                <!-- 發送至Email -->
+                <div class="pop__pane" id="pop__email">
+                    <div class="discount__result">
+                        <input class="discount__input" type="text" placeholder="輸入Email" value="" disabled>
+                    </div>
+                </div>
+
+
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)"><span>取消</span></button>
+                    <button class="pop__action" onclick="popSendEorderMsg()"><span>發送</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 電子簽單傳送成功popup -->
+        <section id="pop__order--send" class="pop pop--center pop__order--send" onclick="popClose(this)">
+            <div class="pop__body">
+                <div class="pop__icons">
+                    <div class="pop__icon pop__icon--green">
+                        <i class="fa-solid fa-check fa-2xl"></i>
+                    </div>
+                </div>
+
+                <span class="pop__title">電子簽單傳送成功</span>
+                <span class="pop__content">已發送至0987654321</span>
+                <span class="pop__content">已發送至username@mail.com</span>
+
+                <div class="pop__actions">
+                    <button class="pop__action" onclick="popClose(this)"><span>完成</span></button>
+                </div>
+            </div>
+        </section>
+
         <!-- Script -->
         <script src="./js/less.js" ></script> <!-- Less -->
+        <script src="./js/jquery-3.7.0.min.js"></script>
+        <script src="./js/cashier-result.js" ></script> <!-- Less -->
     </body>
 </html>
